@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="stencil3d_try" desc="Accelerator STENCIL3D_TRY" data_size="4" device_id="052" hls_tool="stratus_hls">
+    <param name="col_size" desc="col_size" />
+    <param name="height_size" desc="height_size" />
+    <param name="row_size" desc="row_size" />
+  </accelerator>
+</sld>

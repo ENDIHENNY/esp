@@ -31,6 +31,10 @@
 #include <esp_accelerator.h>
 
 // <<--esp-include-->>
+#include "stencil3d_v0.h"
+#include "mac2.h"
+#include "stencil3d_try.h"
+#include "mac.h"
 #include "FFTAccelerator.h"
 #include "AdderAccelerator.h"
 #include "fft.h"
@@ -47,6 +51,10 @@ unsigned DMA_WORD_PER_BEAT(unsigned _st);
 
 enum esp_accelerator_type {
 	// <<--esp-enum-->>
+	stencil3d_v0,
+	mac2,
+	stencil3d_try,
+	mac,
 	fftaccelerator,
 	adderaccelerator,
 	fft,
@@ -62,6 +70,10 @@ enum esp_accelerator_type {
 
 union esp_accelerator_descriptor {
 	// <<--esp-descriptor-->>
+	struct stencil3d_v0_access stencil3d_v0_desc;
+	struct mac2_access mac2_desc;
+	struct stencil3d_try_access stencil3d_try_desc;
+	struct mac_access mac_desc;
 	struct fftaccelerator_access fftaccelerator_desc;
 	struct adderaccelerator_access adderaccelerator_desc;
 	struct fft_access fft_desc;

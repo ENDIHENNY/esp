@@ -23,6 +23,18 @@ void *accelerator_thread( void *ptr )
 	gettime(&th_start);
 	switch (info->type) {
 	// <<--esp-ioctl-->>
+	case stencil3d_v0 :
+		rc = ioctl(info->fd, STENCIL3D_V0_IOC_ACCESS, info->desc.stencil3d_v0_desc);
+		break;
+	case mac2 :
+		rc = ioctl(info->fd, MAC2_IOC_ACCESS, info->desc.mac2_desc);
+		break;
+	case stencil3d_try :
+		rc = ioctl(info->fd, STENCIL3D_TRY_IOC_ACCESS, info->desc.stencil3d_try_desc);
+		break;
+	case mac :
+		rc = ioctl(info->fd, MAC_IOC_ACCESS, info->desc.mac_desc);
+		break;
 	case fftaccelerator :
 		rc = ioctl(info->fd, FFTACCELERATOR_IOC_ACCESS, info->desc.fftaccelerator_desc);
 		break;
@@ -88,6 +100,18 @@ static void esp_config(esp_thread_info_t cfg[], unsigned nacc)
 
 		switch (info->type) {
 		// <<--esp-prepare-->>
+		case stencil3d_v0 :
+			esp_prepare(&info->desc.stencil3d_v0_desc.esp);
+			break;
+		case mac2 :
+			esp_prepare(&info->desc.mac2_desc.esp);
+			break;
+		case stencil3d_try :
+			esp_prepare(&info->desc.stencil3d_try_desc.esp);
+			break;
+		case mac :
+			esp_prepare(&info->desc.mac_desc.esp);
+			break;
 		case fftaccelerator :
 			esp_prepare(&info->desc.fftaccelerator_desc.esp);
 			break;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="stencil3d_v0" desc="Accelerator STENCIL3D_V0" data_size="4" device_id="045" hls_tool="stratus_hls">
+    <param name="coef_0" desc="coef_0" />
+    <param name="col_size" desc="col_size" />
+    <param name="coef_1" desc="coef_1" />
+    <param name="height_size" desc="height_size" />
+    <param name="row_size" desc="row_size" />
+  </accelerator>
+</sld>

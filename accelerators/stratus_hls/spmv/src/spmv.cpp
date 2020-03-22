@@ -468,7 +468,7 @@ void spmv::compute_kernel()
     	// DMA length evaluation
     	len_rows = (uint32_t) (vals_plm_size / max_nonzero);
     	len_out = len_rows;
-
+	std::cout << "LEN_ROWS = " << len_rows << std::endl;
     	// # of bursts evaluation
     	bursts = (uint32_t) ((nrows - 1) / len_rows) + 1;
     }

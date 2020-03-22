@@ -1,0 +1,682 @@
+memlist.txt:stencil3d_v0_plm_block_in_dma32 16384 32 1w:0r 0w:1r
+memlist.txt:stencil3d_v0_plm_block_out_dma32 16384 32 1w:0r 0w:1r
+memlist.txt:stencil3d_v0_plm_block_in_dma64 16384 32 2w:0r 0w:1r
+memlist.txt:stencil3d_v0_plm_block_out_dma64 16384 32 1w:0r 0w:2r
+Binary file hls-work-virtex7/bdw_work/modules/tb/TESTBENCH_DMA64/incisive/sc_main.o matches
+Binary file hls-work-virtex7/bdw_work/modules/tb/TESTBENCH_DMA64/incisive/system.o matches
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:         assign stencil3d_v0_GreaterThan_32Sx16S_1U_4_18_out1 = stencil3d_v0_GreaterThan_32Sx16S_1U_4_18_in2[31] ^ stencil3d_v0_GreaterThan_32Sx16S_1U_4_18_in2 > 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:               stencil3d_v0_N_Mux_32_2_0_4_19_out1 = 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_20_out1 = stencil3d_v0_Sub_32Sx16S_32S_4_20_in2 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_262_out1 = s_reg_52 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:         assign stencil3d_v0_GreaterThan_32Sx16S_1U_4_50_out1 = s_reg_21[31] ^ s_reg_21 > 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:               stencil3d_v0_N_Mux_32_2_0_4_51_out1 = 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_52_out1 = s_reg_21 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:                                                  .read() > (sc_int<16> )16384LL
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:    stencil3d_v0_N_Mux_32_2_0_4_19_out1 = (sc_uint<32> ) (16384ULL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:                                           .read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:                                            s_reg_52.read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:                                                  (sc_int<16> )16384LL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:    stencil3d_v0_N_Mux_32_2_0_4_51_out1 = (sc_uint<32> ) (16384ULL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stencil3d_v0_rtl.cpp:                                           s_reg_21.read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_in_dma64.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0.hpp:#define PLM_OUT_WORD 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0.hpp:#define PLM_IN_WORD 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/src_cache/stencil3d_v0_plm_block_out_dma64.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>19,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>19,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>19,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>378,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>29,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>29,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>29,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>51,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>51,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>51,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>400,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>47,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>47,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>47,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA64/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:         assign stencil3d_v0_GreaterThan_32Sx16S_1U_4_15_out1 = s_reg_5[31] ^ s_reg_5 > 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:               stencil3d_v0_N_Mux_32_2_0_4_16_out1 = 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_17_out1 = s_reg_5 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_249_out1 = s_reg_48 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:         assign stencil3d_v0_GreaterThan_32Sx16S_1U_4_39_out1 = s_reg_19[31] ^ s_reg_19 > 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:               stencil3d_v0_N_Mux_32_2_0_4_40_out1 = 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.v:         assign stencil3d_v0_Sub_32Sx16S_32S_4_41_out1 = s_reg_19 - 32'd0000016384;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:                                                  sc_int<16> )16384LL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:    stencil3d_v0_N_Mux_32_2_0_4_16_out1 = (sc_uint<32> ) (16384ULL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:                                           s_reg_5.read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:                                            s_reg_48.read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:                                                  (sc_int<16> )16384LL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:    stencil3d_v0_N_Mux_32_2_0_4_40_out1 = (sc_uint<32> ) (16384ULL);
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stencil3d_v0_rtl.cpp:                                           s_reg_19.read() - 16384LL;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_in_dma32.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0.hpp:#define PLM_OUT_WORD 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0.hpp:#define PLM_IN_WORD 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:        mem_size = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:        SIZE = 16384,
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/src_cache/stencil3d_v0_plm_block_out_dma32.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<sink>16384,0,44,0,16,0</sink>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<sink>16384,0,44,1,1,0</sink>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<sink>16384,0,44,2,16,0</sink>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<src>16384,0,44,,0,16,0</src>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<src>16384,0,44,,0,16,0</src>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<src>16384,0,44,,0,16,0</src>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<src>16384,0,44,,0,16,0</src>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/post_sched.snapshot.bdr.8:			<src>16384,0,44,,0,16,0</src>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/store_output_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:			<id>16384</id>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:			<source_loc>16384</source_loc>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/sched.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>378,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>23,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>23,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>23,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>16384</name>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>16384</dimension>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>16384</simple_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>16384</compact_depth>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>16384</word_count>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>16384</loop_iterations>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>16384</array>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>16384</value>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>48,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>48,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>48,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>400,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>41,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>41,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>41,16384</const_ref>
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/modules/stencil3d_v0/BASIC_DMA32/stratus_hls.log:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02813.       Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02813.       Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02813.       Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02813.       Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_in_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA32.s.trace:        02935.         stencil3d_v0_plm_block_out_dma32 memory having 16384
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:	module BASIC_DMA64_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA64_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.trace:		BASIC_DMA64_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:	module BASIC_DMA32_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA32_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.trace:		BASIC_DMA32_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:	module BASIC_DMA64_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA64_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA64_V.s.trace:		BASIC_DMA64_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:	module BASIC_DMA32_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA32_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/trace/sim.BASIC_DMA32_V.s.trace:		BASIC_DMA32_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02813.       Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02813.       Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02813.       Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02813.       Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_in_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_ping, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         Array plm_out_pong, 16384 words x 32 bits (524288 total
+hls-work-virtex7/bdw_work/trace/hls.stencil3d_v0.BASIC_DMA64.s.trace:        02935.         stencil3d_v0_plm_block_out_dma64 memory having 16384
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.args:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.args:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/.timestamp.ts:1583159565 /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.files:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.files:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/INCA_libs/irun.lnx8664.15.20.nc/files.ts:1583159565 /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/siminfo:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:		/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:	module BASIC_DMA32_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA32_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/irun.log:		BASIC_DMA32_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:	module BASIC_DMA32_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA32_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA32_V/bdw_sim.log:		BASIC_DMA32_V.BRAM_16384x1:v <0x36cc48c4>
+Binary file hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/librun.so matches
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.args:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.args:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/.timestamp.ts:1583159565 /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.files:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/ncvlog.files:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/INCA_libs/irun.lnx8664.15.20.nc/files.ts:1583159565 /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/siminfo:/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:		/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:	module BASIC_DMA64_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA64_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/irun.log:		BASIC_DMA64_V.BRAM_16384x1:v <0x36cc48c4>
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:	module BASIC_DMA64_V.BRAM_16384x1:v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:file: /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:module BRAM_16384x1( CLK, A0, D0, Q0, WE0, WEM0, CE0, A1, D1, Q1, WE1, WEM1, CE1 );
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:ncvlog: *W,RECOME (/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v,3|18): recompiling design unit BASIC_DMA64_V.BRAM_16384x1:v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:	First compiled from line 3 of /home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v.
+hls-work-virtex7/bdw_work/sims/BASIC_DMA64_V/bdw_sim.log:		BASIC_DMA64_V.BRAM_16384x1:v <0x36cc48c4>
+Binary file hls-work-virtex7/bdw_work/sims/BEHAV_DMA64/INCA_libs/irun.lnx8664.15.20.nc/librun.so matches
+Binary file hls-work-virtex7/.memgen.log.swp matches
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma32.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_in_dma64.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma64.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:   sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:        mem_size = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:        SIZE = 16384,
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:      if((int)(address) >=  16384) return 0;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:      if((int)(address) >=  16384) return;
+hls-work-virtex7/memlib/c_parts/stencil3d_v0_plm_block_out_dma32.h:    sc_uint<32> mem[16384];
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_in_dma32.bdm:setNumWords 16384
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_in_dma32.bdm:setVendorModel "/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v"
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_out_dma32.bdm:setNumWords 16384
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_out_dma32.bdm:setVendorModel "/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v"
+hls-work-virtex7/memlib/memlib.bdl:		<vendor_model>/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v</vendor_model>
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>16384</word_count>
+hls-work-virtex7/memlib/memlib.bdl:		<vendor_model>/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v</vendor_model>
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>16384</word_count>
+hls-work-virtex7/memlib/memlib.bdl:		<vendor_model>/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v</vendor_model>
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>16384</word_count>
+hls-work-virtex7/memlib/memlib.bdl:		<vendor_model>/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v</vendor_model>
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>16384</word_count>
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_out_dma64.bdm:setNumWords 16384
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_out_dma64.bdm:setVendorModel "/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v"
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_in_dma64.bdm:setNumWords 16384
+hls-work-virtex7/memlib/stencil3d_v0_plm_block_in_dma64.bdm:setVendorModel "/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/tech/virtex7/mem/BRAM_16384x1.v"
+hls-work-virtex7/memgen.log:  INFO: Found SRAM definition                   BRAM_16384x1  16384  1-bit words  2 read/write ports 
+hls-work-virtex7/memgen.log:        16384 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/memgen.log:        bank type BRAM_16384x1
+hls-work-virtex7/memgen.log:        16384 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/memgen.log:        bank type BRAM_16384x1
+hls-work-virtex7/memgen.log:        16384 words, 32 bits, 2w:0r 0w:1r
+hls-work-virtex7/memgen.log:        bank type BRAM_16384x1
+hls-work-virtex7/memgen.log:        16384 words, 32 bits, 1w:0r 0w:2r
+hls-work-virtex7/memgen.log:        bank type BRAM_16384x1
+src/stencil3d_v0.hpp:#define PLM_OUT_WORD 16384
+src/stencil3d_v0.hpp:#define PLM_IN_WORD 16384

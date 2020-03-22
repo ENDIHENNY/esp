@@ -1,0 +1,471 @@
+memlist.txt:mac2_plm_block_in_dma32 6400 32 1w:0r 0w:1r
+memlist.txt:#mac2_plm_block_in_dma64 6400 32 2w:0r 0w:1r
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:         assign mac2_GreaterThan_32Sx14S_1U_4_19_out1 = s_reg_8[31] ^ s_reg_8 > 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:               mac2_N_Mux_32_2_0_4_20_out1 = 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:         assign mac2_Sub_32Sx14S_32S_4_21_out1 = s_reg_8 - 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:         assign mac2_GreaterThan_32Sx14S_1U_4_71_out1 = s_reg_61[31] ^ s_reg_61 > 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:               mac2_N_Mux_32_2_0_4_72_out1 = 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.v:         assign mac2_Sub_32Sx14S_32S_4_73_out1 = s_reg_61 - 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:   sc_uint<32> mem[6400];
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:        mem_size = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:        SIZE = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:        mem_size = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:        SIZE = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:      if((int)(address) >=  6400) return 0;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:      if((int)(address) >=  6400) return;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2_plm_block_in_dma64.h:    sc_uint<32> mem[6400];
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/src_cache/mac2.hpp:#define PLM_IN_WORD 6400
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:                                          s_reg_8.read() > (sc_int<14> )6400LL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:    mac2_N_Mux_32_2_0_4_20_out1 = (sc_uint<32> ) (6400ULL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:                                   .read() - 6400LL;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:                                          s_reg_61.read() > (sc_int<14> )6400LL)
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:    mac2_N_Mux_32_2_0_4_72_out1 = (sc_uint<32> ) (6400ULL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/mac2_rtl.cpp:                                   .read() - 6400LL;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>20,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>20,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>20,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>6400</dimension>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>6400</simple_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>6400</compact_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<dimension>6400</dimension>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<simple_depth>6400</simple_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<compact_depth>6400</compact_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02813.       Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA64/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:         assign mac2_GreaterThan_32Sx14S_1U_4_16_out1 = s_reg_9[31] ^ s_reg_9 > 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:               mac2_N_Mux_32_2_0_4_17_out1 = 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:         assign mac2_Sub_32Sx14S_32S_4_18_out1 = s_reg_9 - 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:         assign mac2_GreaterThan_32Sx14S_1U_4_58_out1 = s_reg_58[31] ^ s_reg_58 > 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:               mac2_N_Mux_32_2_0_4_59_out1 = 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.v:         assign mac2_Sub_32Sx14S_32S_4_60_out1 = s_reg_58 - 32'd0000006400;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:   sc_uint<32> mem[6400];
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:        mem_size = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:        SIZE = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:        mem_size = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:        SIZE = 6400,
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:      if((int)(address) >=  6400) return 0;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:      if((int)(address) >=  6400) return;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2_plm_block_in_dma32.h:    sc_uint<32> mem[6400];
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/src_cache/mac2.hpp:#define PLM_IN_WORD 6400
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:                                          s_reg_9.read() > (sc_int<14> )6400LL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:    mac2_N_Mux_32_2_0_4_17_out1 = (sc_uint<32> ) (6400ULL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:                                   .read() - 6400LL;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:                                          s_reg_58.read() > (sc_int<14> )6400LL)
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:    mac2_N_Mux_32_2_0_4_59_out1 = (sc_uint<32> ) (6400ULL);
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/mac2_rtl.cpp:                                   .read() - 6400LL;
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/sched.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>17,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>17,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>17,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/optim.snapshot.bdr:				<const_ref>16,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/compute_kernel_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/load_input_0_netlist.snapshot.bdr:			<name>6400</name>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>6400</dimension>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>6400</simple_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>6400</compact_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<dimension>6400</dimension>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<simple_depth>6400</simple_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<compact_depth>6400</compact_depth>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:			<word_count>6400</word_count>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/rtl.phase.bdr:				<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<loop_iterations>6400</loop_iterations>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<array>6400</array>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:			<value>6400</value>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>7,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>33,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/bdr/elab.snapshot.bdr:				<const_ref>6,6400</const_ref>
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02813.       Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/modules/mac2/BASIC_DMA32/stratus_hls.log:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02813.       Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02813.       Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA32.trace:        6400 words, 32 bits, 1w:0r 0w:1r
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02813.       Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02813.       Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_ping, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         Array plm_in_pong, 6400 words x 32 bits (204800 total
+hls-work-virtex7/bdw_work/trace/hls.mac2.BASIC_DMA64.s.trace:        02935.         memory having 6400 words x 32 bits (204800 total bits). 
+Binary file hls-work-virtex7/.memgen.log.swp matches
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:   sc_uint<32> mem[6400];
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:        mem_size = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:        SIZE = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:        mem_size = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:        SIZE = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:      if((int)(address) >=  6400) return 0;
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:      if((int)(address) >=  6400) return;
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma32.h:    sc_uint<32> mem[6400];
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:   sc_uint<32> mem[6400];
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:        mem_size = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:        SIZE = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:        mem_size = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:        SIZE = 6400,
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:      if((int)(address) >=  6400) return 0;
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:      if((int)(address) >=  6400) return;
+hls-work-virtex7/memlib/c_parts/mac2_plm_block_in_dma64.h:    sc_uint<32> mem[6400];
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>6400</word_count>
+hls-work-virtex7/memlib/memlib.bdl:		<word_count>6400</word_count>
+hls-work-virtex7/memlib/mac2_plm_block_in_dma64.bdm:setNumWords 6400
+hls-work-virtex7/memlib/mac2_plm_block_in_dma32.bdm:setNumWords 6400
+hls-work-virtex7/memgen.log:        6400 words, 32 bits, 1w:0r 0w:1r
+src/mac2.hpp:#define PLM_IN_WORD 6400
+stratus/project.tcl:    set SIM_CLOCK_PERIOD 6400.0

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld>
+  <accelerator name="mac2" desc="Accelerator MAC2" data_size="4" device_id="152" hls_tool="stratus_hls">
+    <param name="mac_len" desc="mac_len" />
+    <param name="mac_vec" desc="mac_vec" />
+    <param name="mac_n" desc="mac_n" />
+  </accelerator>
+</sld>
