@@ -8,7 +8,6 @@
 #include "stencil3d_v0_debug_info.hpp"
 #include "stencil3d_v0.hpp"
 #include "stencil3d_v0_directives.hpp"
-#include "stencil3d_test.hpp"
 
 #include "esp_templates.hpp"
 
@@ -22,6 +21,12 @@ const size_t MEM_SIZE = 131072 / (DMA_WIDTH/8);
 
 #define MAX 1000
 #define MIN 1
+
+#if (TYPEDEF == 0)
+    #define TYPE int32_t
+#elif (TYPEDEF == 1)
+    #define TYPE float
+#endif
 
 class system_t : public esp_system<DMA_WIDTH, MEM_SIZE>
 {
@@ -91,9 +96,9 @@ public:
     uint32_t out_words_adj;
     uint32_t in_size;
     uint32_t out_size;
-    int32_t *in;
-    int32_t *out;
-    int32_t *gold;
+    TYPE *in;
+    TYPE *out;
+    TYPE *gold;
 
     // Other Functions
 };

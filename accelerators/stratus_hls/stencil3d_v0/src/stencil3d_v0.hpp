@@ -6,6 +6,7 @@
 
 #include "stencil3d_v0_conf_info.hpp"
 #include "stencil3d_v0_debug_info.hpp"
+#include "fpdata.hpp"
 
 #include "esp_templates.hpp"
 

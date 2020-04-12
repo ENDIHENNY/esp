@@ -1,7 +1,5 @@
 #ifndef _STENCIL3D_V0_FUNCTIONS_HPP_
 #define _STENCIL3D_V0_FUNCTIONS_HPP_
-
-#include "stencil3d_v0_conf_info.hpp"
 #include "stencil3d_v0.hpp"
 
 void boundary_fill(int32_t row_size, int32_t col_size, int32_t height_size, sc_dt::sc_int<DATA_WIDTH> orig[PLM_IN_WORD], sc_dt::sc_int<DATA_WIDTH> sol[PLM_OUT_WORD]) {
@@ -54,17 +52,28 @@ void stencil_compute(int32_t C0, int32_t C1, int32_t row_size, int32_t col_size,
 		int32_t index5 = k + 1 + index0_share;
 		int32_t index6 = k - 1 + index0_share;
 		
-		int32_t sum0 = orig[index0];
-		int32_t sum1 = orig[index1] + orig[index2] + orig[index3] + 
-		       orig[index4] + orig[index5] + orig[index6];
-	 	
-                int32_t mul0 = sum0 * C0;
-                int32_t mul1 = sum1 * C1;
-		sol[index0] = mul0 + mul1;
+		#if (TYPEDEF == 0)
+			int32_t sum0 = orig[index0]; 
+			int32_t sum1 = orig[index1] + orig[index2] + orig[index3] + 
+			       orig[index4] + orig[index5] + orig[index6];
+			
+			int32_t mul0 = sum0 * C0;
+			int32_t mul1 = sum1 * C1;
+			sol[index0] = mul0 + mul1;
+		
+		#elif (TYPEDEF == 1)
+			//int2fp(FPDATA temp[PLM_IN_WORD], orig);
+			FPDATA sum0 = int2fp<FPDATA, WORD_SIZE>(orig[index0]);
+			FPDATA sum1 = int2fp<FPDATA, WORD_SIZE>(orig[index1]) + int2fp<FPDATA, WORD_SIZE>(orig[index2]) +int2fp<FPDATA, WORD_SIZE>(orig[index3]) +int2fp<FPDATA, WORD_SIZE>(orig[index4]) +int2fp<FPDATA, WORD_SIZE>(orig[index5]) +int2fp<FPDATA, WORD_SIZE>(orig[index6]);
+			FPDATA mul0 = ((FPDATA) C0) * sum0;
+			FPDATA mul1 = ((FPDATA) C1) * sum1;
+			sol[index0] = fp2int<FPDATA, WORD_SIZE>(mul0 + mul1);
+		#endif
+		
             }
         }
     }
 }
 
-    
+
 #endif /* _STENCIL3D_V0_FUNCTIONS_HPP_ */

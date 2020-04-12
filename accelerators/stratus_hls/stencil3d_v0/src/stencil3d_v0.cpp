@@ -49,6 +49,9 @@ void stencil3d_v0::load_input()
         coef_0 = config.coef_0;
     }
 
+        //sc_time begin_time = sc_time_stamp();
+	//cout << "SHOW ME SHOW ME " << begin_time << endl;
+	//printf("Info: accelerator: BEGIN loading memory at %c\n", a[0]);
     // Load
     {
         HLS_PROTO("load-dma");
@@ -117,8 +120,7 @@ void stencil3d_v0::load_input()
                         HLS_UNROLL_SIMPLE;
                         if (ping)
                             plm_in_ping[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
-                        else
-                            plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
+                        else plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
                     }
                 }
 #endif
@@ -126,6 +128,10 @@ void stencil3d_v0::load_input()
                 ping = !ping;
             }
         }
+	
+        sc_time end_time_compute = sc_time_stamp();
+	//float b = end_time_compute.to_double();
+	//printf("Info: accelerator: END loading memory at %f ps\n", b);
     }
 
     // Conclude
@@ -140,6 +146,8 @@ void stencil3d_v0::store_output()
 {
     // Reset
     {
+        //sc_time begin_time = sc_time_stamp();
+	//printf("Info: accelerator: BEGIN storing output at %f ps\n", begin_time.to_double());
         HLS_PROTO("store-reset");
 
         this->reset_store_output();
@@ -256,6 +264,8 @@ void stencil3d_v0::store_output()
                     this->dma_write_chnl.put(dataBv);
                 }
 #endif
+        	//sc_time end_time_store = sc_time_stamp();
+		//printf("Info: accelerator: END storing output at %f ps\n", end_time_store.to_double());
                 ping = !ping;
             }
         }
@@ -293,6 +303,8 @@ void stencil3d_v0::compute_kernel()
     int32_t coef_0;
     {
         HLS_PROTO("compute-config");
+        //sc_time begin_time = sc_time_stamp();
+	//printf("Info: accelerator: BEGIN Compute Config at %f ps\n", begin_time.to_double());
 
         cfg.wait_for_config(); // config process
         conf_info_t config = this->conf_info.read();
@@ -304,11 +316,15 @@ void stencil3d_v0::compute_kernel()
         coef_1 = config.coef_1;
         col_size = config.col_size;
         coef_0 = config.coef_0;
+        //sc_time end_time_config = sc_time_stamp();
+	//printf("Info: accelerator: END Compute Config at %f ps\n", end_time_config.to_double());
     }
 
 
     // Compute
     bool ping = true;
+    //sc_time begin_time = sc_time_stamp();
+    //printf("Info: accelerator: BEGIN Compute at %f ps\n", begin_time.to_double());
 
     {
         for (uint16_t b = 0; b < 1; b++)
@@ -352,6 +368,8 @@ void stencil3d_v0::compute_kernel()
                 out_rem -= PLM_OUT_WORD;
                 this->compute_store_handshake();
                 ping = !ping;
+    		//sc_time end_time_compute = sc_time_stamp();
+    		//printf("Info: accelerator: END Compute at %f ps\n", end_time_compute.to_double());
             }
         }
 
