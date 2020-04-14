@@ -23,13 +23,13 @@ static void init_random_distribution(void)
     gen = new std::mt19937(rd());
     #if (TYPEDEF == 1)
         const TYPE LO = 0.0;
-        const TYPE HI = 1000.0;
+        const TYPE HI = 100.0;
 	// dis = new std::uniform_real_distribution<TYPE>(LO, HI);
 	default_random_engine generator;
 	dis = new std::uniform_real_distribution<TYPE>(LO, HI);
     #elif (TYPEDEF == 0)    
         const TYPE LO = 0;
-        const TYPE HI = 1000;
+        const TYPE HI = 100;
 	default_random_engine generator;
 	dis = new std::uniform_int_distribution<TYPE>(LO, HI);
     #endif
@@ -226,7 +226,6 @@ void system_t::load_memory()
                 TYPE mul1 = sum1 * coef_1;
 
 		gold[index0] = mul0 + mul1;
-		cout << "DEBUG INFO: gold = " << gold[index0] << endl;
                     }
         }
     }
@@ -262,8 +261,9 @@ void system_t::load_memory()
 	#if (DMA_WORD_PER_BEAT == 0)
 	    for (int i = 0; i < in_size; i++)  {
         	sc_dt::sc_bv<DATA_WIDTH> data_bv(fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i])));
-		for (int j = 0; j < DMA_BEAT_PER_WORD; j++)
+		for (int j = 0; j < DMA_BEAT_PER_WORD; j++) {
 		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);
+		}
 	    }
 	#else
 	    for (int i = 0; i < in_size / DMA_WORD_PER_BEAT; i++)  {
@@ -271,6 +271,8 @@ void system_t::load_memory()
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
             	    data_bv.range((j+1) * DATA_WIDTH - 1, j * DATA_WIDTH) = fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i * DMA_WORD_PER_BEAT + j]));
 		mem[i] = data_bv;
+		cout << "DEBUG INFO: DMA WIDTH = " << DMA_WIDTH << endl;
+		cout << "DEBUG INFO: mem = "<< mem[i] << endl;
 	    }
 	#endif
 #endif
@@ -318,7 +320,6 @@ void system_t::dump_memory()
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++) {
             	    FPDATA out_fx = bv2fp<FPDATA, WORD_SIZE>(mem[offset + i].range((j + 1) * DATA_WIDTH - 1, j * DATA_WIDTH));
 		    out[i * DMA_WORD_PER_BEAT + j] = (float) out_fx;
-		    cout << "DEBUG INFO: out = " << out[i * DMA_WORD_PER_BEAT + j] << endl;
 		}
 	#endif
 #endif
@@ -329,12 +330,15 @@ int system_t::validate()
 {
     // Check for mismatches
     uint32_t errors = 0;
-    const float ERR_TH = 0.1;
+    const float ERR_TH = 0.05;
 
     for (int i = 0; i < 1; i++)
-        for (int j = 0; j < row_size*col_size*height_size; j++)
+        for (int j = 0; j < row_size*col_size*height_size; j++){
             if ((fabs(gold[j] - out[j]) / fabs(gold[j])) > ERR_TH)
                 errors++;
+	    cout << "DEBUG INFO: out = " << out[j] << endl;
+	    cout << "DEBUG INFO: gold = " << gold[j] << endl;
+	}
 
             //if (gold[i * out_words_adj + j] != out[i * out_words_adj + j])
             //    errors++;

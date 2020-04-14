@@ -1,4 +1,4 @@
-FX_WIDTH ?= 64
+FX_WIDTH ?= 32
 FX32_IL   = 12
 FX64_IL   = 42
 TYPEDEF ?= 1 

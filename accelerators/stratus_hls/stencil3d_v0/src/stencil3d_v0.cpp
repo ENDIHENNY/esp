@@ -118,9 +118,13 @@ void stencil3d_v0::load_input()
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
                         HLS_UNROLL_SIMPLE;
-                        if (ping)
+                        if (ping) {
                             plm_in_ping[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
-                        else plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
+			    cout << "DEBUG INFO: plm_in = " << dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) << endl;
+			    cout << "DEBUG INFO: DATA_WIDTH = " << DATA_WIDTH << endl;
+			}
+                        else 
+			    plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
                     }
                 }
 #endif

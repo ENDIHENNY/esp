@@ -15,7 +15,12 @@
 #define __round_mask(x, y) ((y)-1)
 #define round_up(x, y) ((((x)-1) | __round_mask(x, y))+1)
 /* <<--defines-->> */
-#define DATA_WIDTH 32
+#if (TYPE == 0)
+	#define DATA_WIDTH 32
+#elif (TYPE == 1)
+	#define DATA_WIDTH FX_WIDTH
+#endif
+
 #define DMA_SIZE SIZE_WORD
 #define PLM_OUT_WORD 16384
 #define PLM_IN_WORD 16384
