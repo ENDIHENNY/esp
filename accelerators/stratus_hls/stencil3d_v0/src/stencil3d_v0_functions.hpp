@@ -68,7 +68,6 @@ void stencil_compute(int32_t C0, int32_t C1, int32_t row_size, int32_t col_size,
 			FPDATA mul0 = ((FPDATA) C0) * sum0;
 			FPDATA mul1 = ((FPDATA) C1) * sum1;
 			sol[index0] = fp2int<FPDATA, WORD_SIZE>(mul0 + mul1);
-			cout << "DEBUG INFO: sol = " << sol[index0] << endl;
 		#endif
 		
             }

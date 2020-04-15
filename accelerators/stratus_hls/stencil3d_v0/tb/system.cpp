@@ -271,8 +271,6 @@ void system_t::load_memory()
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
             	    data_bv.range((j+1) * DATA_WIDTH - 1, j * DATA_WIDTH) = fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i * DMA_WORD_PER_BEAT + j]));
 		mem[i] = data_bv;
-		cout << "DEBUG INFO: DMA WIDTH = " << DMA_WIDTH << endl;
-		cout << "DEBUG INFO: mem = "<< mem[i] << endl;
 	    }
 	#endif
 #endif
@@ -336,8 +334,6 @@ int system_t::validate()
         for (int j = 0; j < row_size*col_size*height_size; j++){
             if ((fabs(gold[j] - out[j]) / fabs(gold[j])) > ERR_TH)
                 errors++;
-	    cout << "DEBUG INFO: out = " << out[j] << endl;
-	    cout << "DEBUG INFO: gold = " << gold[j] << endl;
 	}
 
             //if (gold[i * out_words_adj + j] != out[i * out_words_adj + j])
