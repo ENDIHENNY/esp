@@ -64,10 +64,11 @@ public:
 
         /* <<--params-default-->> */
         row_size = 16;
-        height_size = 32;
+        height_size = 16;
         coef_1 = -1;
         col_size = 32;
         coef_0 = 6;
+        stencil_n = 2;
     }
 
     // Processes
@@ -91,6 +92,7 @@ public:
     int32_t coef_1;
     int32_t col_size;
     int32_t coef_0;
+    int32_t stencil_n;
 
     uint32_t in_words_adj;
     uint32_t out_words_adj;

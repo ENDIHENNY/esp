@@ -6,5 +6,6 @@
     <param name="coef_1" desc="coef_1" />
     <param name="height_size" desc="height_size" />
     <param name="row_size" desc="row_size" />
+    <param name="stencil_n" desc="stencil_n" />
   </accelerator>
 </sld>

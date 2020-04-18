@@ -34,6 +34,7 @@ void stencil3d_v0::load_input()
     int32_t coef_1;
     int32_t col_size;
     int32_t coef_0;
+    int32_t stencil_n;
     {
         HLS_PROTO("load-config");
 
@@ -47,6 +48,7 @@ void stencil3d_v0::load_input()
         coef_1 = config.coef_1;
         col_size = config.col_size;
         coef_0 = config.coef_0;
+        stencil_n = config.stencil_n;
     }
 
         //sc_time begin_time = sc_time_stamp();
@@ -61,7 +63,7 @@ void stencil3d_v0::load_input()
         uint32_t offset = 0;
 
         // Batching
-        for (uint16_t b = 0; b < 1; b++)
+        for (uint16_t b = 0; b < stencil_n; b++)
         {
             wait();
 #if (DMA_WORD_PER_BEAT == 0)
@@ -168,6 +170,7 @@ void stencil3d_v0::store_output()
     int32_t coef_1;
     int32_t col_size;
     int32_t coef_0;
+    int32_t stencil_n;
     {
         HLS_PROTO("store-config");
 
@@ -181,6 +184,7 @@ void stencil3d_v0::store_output()
         coef_1 = config.coef_1;
         col_size = config.col_size;
         coef_0 = config.coef_0;
+        stencil_n = config.stencil_n;
     }
 
     // Store
@@ -190,15 +194,15 @@ void stencil3d_v0::store_output()
 
         bool ping = true;
 #if (DMA_WORD_PER_BEAT == 0)
-        uint32_t store_offset = (row_size*col_size*height_size) * 1;
+        uint32_t store_offset = (row_size*col_size*height_size) * stencil_n;
 #else
-        uint32_t store_offset = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT) * 1;
+        uint32_t store_offset = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT) * stencil_n;
 #endif
         uint32_t offset = store_offset;
 
         wait();
         // Batching
-        for (uint16_t b = 0; b < 1; b++)
+        for (uint16_t b = 0; b < stencil_n; b++)
         {
             wait();
 #if (DMA_WORD_PER_BEAT == 0)
@@ -303,6 +307,7 @@ void stencil3d_v0::compute_kernel()
     int32_t coef_1;
     int32_t col_size;
     int32_t coef_0;
+    int32_t stencil_n;
     {
         HLS_PROTO("compute-config");
         //sc_time begin_time = sc_time_stamp();
@@ -318,6 +323,7 @@ void stencil3d_v0::compute_kernel()
         coef_1 = config.coef_1;
         col_size = config.col_size;
         coef_0 = config.coef_0;
+        stencil_n = config.stencil_n;
         //sc_time end_time_config = sc_time_stamp();
 	//printf("Info: accelerator: END Compute Config at %f ps\n", end_time_config.to_double());
     }
@@ -329,7 +335,7 @@ void stencil3d_v0::compute_kernel()
     //printf("Info: accelerator: BEGIN Compute at %f ps\n", begin_time.to_double());
 
     {
-        for (uint16_t b = 0; b < 1; b++)
+        for (uint16_t b = 0; b < stencil_n; b++)
         {
             uint32_t in_length = row_size*col_size*height_size;
             uint32_t out_length = row_size*col_size*height_size;

@@ -70,6 +70,7 @@ void system_t::config_proc()
         config.coef_1 = coef_1;
         config.col_size = col_size;
         config.coef_0 = coef_0;
+        config.stencil_n = stencil_n;
         sc_time begin_time = sc_time_stamp();
         ESP_REPORT_TIME(begin_time, "BEGIN Config - stencil3d_v0");
 
@@ -147,15 +148,15 @@ void system_t::load_memory()
     out_words_adj = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT);
 #endif
 
-    in_size = in_words_adj * (1);
-    out_size = out_words_adj * (1);
+    in_size = in_words_adj * stencil_n;
+    out_size = out_words_adj * stencil_n;
     ESP_REPORT_INFO("DEBUG Info: Start initializing input\n");
 
     // in = new int32_t[in_size];
     in = new TYPE[in_size];
 
     init_random_distribution();
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < stencil_n; i++) {
         for (int j = 0; j < row_size*col_size*height_size; j++) {
             // in[i * in_words_adj + j] = rand() % (MAX-MIN) + MIN;
             in[i * in_words_adj + j] = gen_random_num();
@@ -169,65 +170,70 @@ void system_t::load_memory()
     int32_t i = 0;
     int32_t j = 0; 
     int32_t k = 0;
+    int32_t l = 0;
     ESP_REPORT_INFO("start boundary filling\n");
-    for(j=0; j<col_size; j++) {
-        for(k=0; k<row_size; k++) {
-	    int32_t index0 = k + row_size * j; 
- 	    int32_t index1 = k + row_size * (j + col_size * (height_size-1)); 
-	    gold[index0] = in[index0];
- 	    gold[index1] = in[index1];
 
-              }
-    }
-    for(i=1; i<height_size-1; i++) {
-        for(k=0; k<row_size; k++) {
-	    int32_t index0 = k + row_size * col_size * i;
-	    int32_t index1 = k + row_size * ((col_size-1) + col_size*i);
-	    gold[index0] = in[index0];
-	    gold[index1] = in[index1];
-        }
-    }
-    for(i=1; i<height_size-1; i++) {
-        for(j=1; j<col_size-1; j++) {
-	    int32_t index0 = row_size * (j + col_size * i);
-	    int32_t index1 = row_size-1 + row_size * (j + col_size * i);
-	    gold[index0] = in[index0];
-	    gold[index1] = in[index1];
-        }
-    }
-    ESP_REPORT_INFO("Finish boundary filling\n");
+    for(l=0; l<stencil_n; l++) {
 
-    //int32_t sum0 = 0;
-    //int32_t sum1 = 0;
-    //int32_t mul0 = 0;
-    //int32_t mul1 = 0;
+	    for(j=0; j<col_size; j++) {
+		for(k=0; k<row_size; k++) {
+		    int32_t index0 = l * out_words_adj + k + row_size * j; 
+		    int32_t index1 = l * out_words_adj + k + row_size * (j + col_size * (height_size-1)); 
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
 
-    // Stencil computation
-    for(i = 1; i < height_size - 1; i++){
-        for(j = 1; j < col_size - 1; j++){
-            for(k = 1; k < row_size - 1; k++){
-		int32_t index0 = k + row_size * (j + col_size * i);
-		int32_t index1 = k + row_size * (j + col_size * (i + 1));
-		int32_t index2 = k + row_size * (j + col_size * (i - 1));
-		int32_t index3 = k + row_size * (j + 1 + col_size * i);
-		int32_t index4 = k + row_size * (j - 1 + col_size * i);
-		int32_t index5 = k + 1 + row_size * (j + col_size * i);
-		int32_t index6 = k - 1 + row_size * (j + col_size * i);
-		
-		// int32_t sum0 = in[index0];
-		// int32_t sum1 = in[index1] + in[index2] + in[index3] + 
-		//        in[index4] + in[index5] + in[index6];
-		// int32_t mul0 = sum0 * coef_0;
-                // int32_t mul1 = sum1 * coef_1;
-		TYPE sum0 = in[index0];
-		TYPE sum1 = in[index1] + in[index2] + in[index3] + 
-		       in[index4] + in[index5] + in[index6];
-		TYPE mul0 = sum0 * coef_0;
-                TYPE mul1 = sum1 * coef_1;
+		      }
+	    }
+	    for(i=1; i<height_size-1; i++) {
+		for(k=0; k<row_size; k++) {
+		    int32_t index0 = l * out_words_adj + k + row_size * col_size * i;
+		    int32_t index1 = l * out_words_adj + k + row_size * ((col_size-1) + col_size*i);
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
+		}
+	    }
+	    for(i=1; i<height_size-1; i++) {
+		for(j=1; j<col_size-1; j++) {
+		    int32_t index0 = l * out_words_adj + row_size * (j + col_size * i);
+		    int32_t index1 = l * out_words_adj + row_size-1 + row_size * (j + col_size * i);
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
+		}
+	    }
+	    ESP_REPORT_INFO("Finish boundary filling\n");
 
-		gold[index0] = mul0 + mul1;
-                    }
-        }
+	    //int32_t sum0 = 0;
+	    //int32_t sum1 = 0;
+	    //int32_t mul0 = 0;
+	    //int32_t mul1 = 0;
+
+	    // Stencil computation
+	    for(i = 1; i < height_size - 1; i++){
+		for(j = 1; j < col_size - 1; j++){
+		    for(k = 1; k < row_size - 1; k++){
+			int32_t index0 = l * out_words_adj + k + row_size * (j + col_size * i);
+			int32_t index1 = l * out_words_adj + k + row_size * (j + col_size * (i + 1));
+			int32_t index2 = l * out_words_adj + k + row_size * (j + col_size * (i - 1));
+			int32_t index3 = l * out_words_adj + k + row_size * (j + 1 + col_size * i);
+			int32_t index4 = l * out_words_adj + k + row_size * (j - 1 + col_size * i);
+			int32_t index5 = l * out_words_adj + k + 1 + row_size * (j + col_size * i);
+			int32_t index6 = l * out_words_adj + k - 1 + row_size * (j + col_size * i);
+			
+			// int32_t sum0 = in[index0];
+			// int32_t sum1 = in[index1] + in[index2] + in[index3] + 
+			//        in[index4] + in[index5] + in[index6];
+			// int32_t mul0 = sum0 * coef_0;
+			// int32_t mul1 = sum1 * coef_1;
+			TYPE sum0 = in[index0];
+			TYPE sum1 = in[index1] + in[index2] + in[index3] + 
+			       in[index4] + in[index5] + in[index6];
+			TYPE mul0 = sum0 * coef_0;
+			TYPE mul1 = sum1 * coef_1;
+
+			gold[index0] = mul0 + mul1;
+			    }
+		}
+	    }
     }
 
 
@@ -330,9 +336,9 @@ int system_t::validate()
     uint32_t errors = 0;
     const float ERR_TH = 0.05;
 
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < stencil_n; i++)
         for (int j = 0; j < row_size*col_size*height_size; j++){
-            if ((fabs(gold[j] - out[j]) / fabs(gold[j])) > ERR_TH)
+            if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH)
                 errors++;
 	}
 
