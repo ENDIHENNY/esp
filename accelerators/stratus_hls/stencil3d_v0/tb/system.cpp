@@ -150,6 +150,10 @@ void system_t::load_memory()
 
     in_size = in_words_adj * stencil_n;
     out_size = out_words_adj * stencil_n;
+    //fwd = row_size * col_size * 2;
+    fwd = PLM_IN_WORD - 2 * row_size * col_size;
+    cnt = 0;
+    mem_idx = 0;
     ESP_REPORT_INFO("DEBUG Info: Start initializing input\n");
 
     // in = new int32_t[in_size];
@@ -158,14 +162,13 @@ void system_t::load_memory()
     init_random_distribution();
     for (int i = 0; i < stencil_n; i++) {
         for (int j = 0; j < row_size*col_size*height_size; j++) {
-            // in[i * in_words_adj + j] = rand() % (MAX-MIN) + MIN;
             in[i * in_words_adj + j] = gen_random_num();
+	    cout << "DEBUG_Info : in = " << in[i * in_words_adj + j] << endl;
 	    }
     }
     ESP_REPORT_INFO("DEBUG Info: Start generating golden output\n");
 
     // Compute golden output
-    // gold = new int32_t[out_size];
     gold = new TYPE[out_size];
     int32_t i = 0;
     int32_t j = 0; 
@@ -181,6 +184,8 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + k + row_size * (j + col_size * (height_size-1)); 
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
+		    cout << "DEBUG Info - height fill : index = " << index0 << endl;
+		    cout << "DEBUG Info - height fill : index = " << index1 << endl;
 
 		      }
 	    }
@@ -190,6 +195,8 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + k + row_size * ((col_size-1) + col_size*i);
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
+		    cout << "DEBUG Info - col fill : index = " << index0 << endl;
+		    cout << "DEBUG Info - col fill : index = " << index1 << endl;
 		}
 	    }
 	    for(i=1; i<height_size-1; i++) {
@@ -198,14 +205,11 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + row_size-1 + row_size * (j + col_size * i);
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
+		    cout << "DEBUG Info - row fill : index = " << index0 << endl;
+		    cout << "DEBUG Info - row fill : index = " << index1 << endl;
 		}
 	    }
 	    ESP_REPORT_INFO("Finish boundary filling\n");
-
-	    //int32_t sum0 = 0;
-	    //int32_t sum1 = 0;
-	    //int32_t mul0 = 0;
-	    //int32_t mul1 = 0;
 
 	    // Stencil computation
 	    for(i = 1; i < height_size - 1; i++){
@@ -219,11 +223,6 @@ void system_t::load_memory()
 			int32_t index5 = l * out_words_adj + k + 1 + row_size * (j + col_size * i);
 			int32_t index6 = l * out_words_adj + k - 1 + row_size * (j + col_size * i);
 			
-			// int32_t sum0 = in[index0];
-			// int32_t sum1 = in[index1] + in[index2] + in[index3] + 
-			//        in[index4] + in[index5] + in[index6];
-			// int32_t mul0 = sum0 * coef_0;
-			// int32_t mul1 = sum1 * coef_1;
 			TYPE sum0 = in[index0];
 			TYPE sum1 = in[index1] + in[index2] + in[index3] + 
 			       in[index4] + in[index5] + in[index6];
@@ -231,20 +230,16 @@ void system_t::load_memory()
 			TYPE mul1 = sum1 * coef_1;
 
 			gold[index0] = mul0 + mul1;
+			cout << "DEBUG INFO: gold = " << gold[index0] << endl;
 			    }
 		}
 	    }
     }
 
 
-    // boundary_fill(row_size, col_size, height_size, in, gold); 
-    // stencil_compute(coef_0, coef_1, row_size, col_size, height_size, in, gold);
 
     ESP_REPORT_INFO("DEBUG Info: Completed generating golden output\n");
     ESP_REPORT_INFO("DEBUG Info: Start memory initializing\n");
-    //    for (int i = 0; i < 1; i++)
-    //        for (int j = 0; j < row_size*col_size*height_size; j++)
-    //            gold[i * out_words_adj + j] = (int32_t) j;
 
     // Memory initialization:
 #if (TYPEDEF == 0)
@@ -268,7 +263,7 @@ void system_t::load_memory()
 	    for (int i = 0; i < in_size; i++)  {
         	sc_dt::sc_bv<DATA_WIDTH> data_bv(fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i])));
 		for (int j = 0; j < DMA_BEAT_PER_WORD; j++) {
-		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);
+		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);<< endl;
 		}
 	    }
 	#else
@@ -276,10 +271,30 @@ void system_t::load_memory()
 		sc_dt::sc_bv<DMA_WIDTH> data_bv;
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
             	    data_bv.range((j+1) * DATA_WIDTH - 1, j * DATA_WIDTH) = fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i * DMA_WORD_PER_BEAT + j]));
-		mem[i] = data_bv;
+		mem[mem_idx] = data_bv;
+		mem_idx++;
+
+		if (PLM_IN_WORD < in_words_adj) {
+			#if (DMA_WORD_PER_BEAT == 1)
+				if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
+					i = i - (PLM_IN_WORD - fwd);
+					cnt++;
+					cout << "DEBUG_INFO: load again from i = " << i << endl;
+				}
+			#elif (DMA_WORD_PER_BEAT == 2)
+				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
+					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
+					cnt++;
+					cout << "DEBUG_INFO: load again from i = " << i + 1 << endl;
+					cout << "DEBUG_INFO: load again from in[i] = " << in[(i + 1)* DMA_WORD_PER_BEAT] << endl;
+					cout << "DEBUG_INFO: load again store to addr  = " << mem_idx << endl;
+				}
+			#endif
+		}
 	    }
 	#endif
 #endif
+    cout << "DEBUG_INFO : mem_addr = " << mem_idx << endl;
     ESP_REPORT_INFO("load memory completed");
 }
 
@@ -327,7 +342,8 @@ void system_t::dump_memory()
 		}
 	#endif
 #endif
-    ESP_REPORT_INFO("dump memory completed");
+	 
+   ESP_REPORT_INFO("dump memory completed");
 }
 
 int system_t::validate()
@@ -338,12 +354,12 @@ int system_t::validate()
 
     for (int i = 0; i < stencil_n; i++)
         for (int j = 0; j < row_size*col_size*height_size; j++){
-            if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH)
+            if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH) {
                 errors++;
+ 	    }
+		
 	}
 
-            //if (gold[i * out_words_adj + j] != out[i * out_words_adj + j])
-            //    errors++;
 
     ESP_REPORT_INFO("Relative error > %.02f for %d output values out of %d\n", ERR_TH, errors, row_size * col_size * height_size);
 

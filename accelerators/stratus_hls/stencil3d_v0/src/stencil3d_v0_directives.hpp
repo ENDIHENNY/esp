@@ -5,20 +5,15 @@
 #define __STENCIL3D_V0_DIRECTIVES_HPP__
 
 #if (DMA_WIDTH == 32)
-#define DMA_BEAT_PER_WORD 1
-#define DMA_WORD_PER_BEAT 1
-#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma32_1w1r"
-#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma32_1w1r"
+	#define DMA_BEAT_PER_WORD 1
+	#define DMA_WORD_PER_BEAT 1
+	#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma32_1w1r"
+	#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma32_1w1r"
 #elif (DMA_WIDTH == 64)
-#define DMA_BEAT_PER_WORD 1
-#define DMA_WORD_PER_BEAT 2
-#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma64_2w1r"
-#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma64_1w2r"
-#elif (DMA_WIDTH == 128)
-#define DMA_BEAT_PER_WORD 1
-#define DMA_WORD_PER_BEAT 4
-#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma32_4w4r"
-#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma32_4w4r"
+	#define DMA_BEAT_PER_WORD 1
+	#define DMA_WORD_PER_BEAT 2
+	#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma64_2w1r"
+	#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma64_1w2r"
 #endif
 
 

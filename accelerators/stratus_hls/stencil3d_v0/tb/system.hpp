@@ -12,6 +12,7 @@
 #include "esp_templates.hpp"
 
 const size_t MEM_SIZE = 131072 / (DMA_WIDTH/8);
+//const size_t MEM_SIZE = 8388608 / (DMA_WIDTH/8);
 
 #include "core/systems/esp_system.hpp"
 
@@ -63,12 +64,12 @@ public:
         acc->debug(debug);
 
         /* <<--params-default-->> */
-        row_size = 16;
-        height_size = 16;
+        row_size = 6;
+        height_size = 10;
         coef_1 = -1;
-        col_size = 32;
+        col_size = 6;
         coef_0 = 6;
-        stencil_n = 2;
+        stencil_n = 1;
     }
 
     // Processes
@@ -96,6 +97,9 @@ public:
 
     uint32_t in_words_adj;
     uint32_t out_words_adj;
+    uint32_t fwd;
+    uint32_t cnt;
+    uint32_t mem_idx;
     uint32_t in_size;
     uint32_t out_size;
     TYPE *in;

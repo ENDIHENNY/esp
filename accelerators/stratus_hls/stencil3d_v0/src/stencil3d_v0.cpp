@@ -35,6 +35,9 @@ void stencil3d_v0::load_input()
     int32_t col_size;
     int32_t coef_0;
     int32_t stencil_n;
+    int32_t rem_fwd;
+    int32_t load_cnt;
+
     {
         HLS_PROTO("load-config");
 
@@ -49,11 +52,17 @@ void stencil3d_v0::load_input()
         col_size = config.col_size;
         coef_0 = config.coef_0;
         stencil_n = config.stencil_n;
+	load_cnt = 0;
+
+        if (PLM_IN_WORD < row_size * col_size * height_size) {
+		//rem_fwd = row_size * col_size * 2;
+		rem_fwd = PLM_IN_WORD - 2 * row_size * col_size;
+	}
+	else {
+		rem_fwd = PLM_IN_WORD;
+	}
     }
 
-        //sc_time begin_time = sc_time_stamp();
-	//cout << "SHOW ME SHOW ME " << begin_time << endl;
-	//printf("Info: accelerator: BEGIN loading memory at %c\n", a[0]);
     // Load
     {
         HLS_PROTO("load-dma");
@@ -72,7 +81,7 @@ void stencil3d_v0::load_input()
             uint32_t length = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT);
 #endif
             // Chunking
-            for (int rem = length; rem > 0; rem -= PLM_IN_WORD)
+            for (int rem = length; rem > 0; rem -= rem_fwd)
             {
                 wait();
                 // Configure DMA transaction
@@ -83,6 +92,7 @@ void stencil3d_v0::load_input()
 #else
                 dma_info_t dma_info(offset / DMA_WORD_PER_BEAT, len / DMA_WORD_PER_BEAT, DMA_SIZE);
 #endif
+		//cout << "DEBUG_INFO: load offset = " << offset / DMA_WORD_PER_BEAT << endl;
                 offset += len;
 
                 this->dma_read_ctrl.put(dma_info);
@@ -123,19 +133,22 @@ void stencil3d_v0::load_input()
                         if (ping) {
                             plm_in_ping[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
 			}
-                        else 
+                        else  {
 			    plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
+			}
                     }
                 }
 #endif
                 this->load_compute_handshake();
                 ping = !ping;
+		load_cnt++;
+                //cout << "DEBUG INFO: SRC load cnt = " << load_cnt << endl;
+		
+		if (rem < PLM_IN_WORD) break;
             }
         }
 	
         sc_time end_time_compute = sc_time_stamp();
-	//float b = end_time_compute.to_double();
-	//printf("Info: accelerator: END loading memory at %f ps\n", b);
     }
 
     // Conclude
@@ -150,8 +163,6 @@ void stencil3d_v0::store_output()
 {
     // Reset
     {
-        //sc_time begin_time = sc_time_stamp();
-	//printf("Info: accelerator: BEGIN storing output at %f ps\n", begin_time.to_double());
         HLS_PROTO("store-reset");
 
         this->reset_store_output();
@@ -171,6 +182,9 @@ void stencil3d_v0::store_output()
     int32_t col_size;
     int32_t coef_0;
     int32_t stencil_n;
+    int32_t rem_fwd;
+    int32_t std_cnt;
+
     {
         HLS_PROTO("store-config");
 
@@ -185,6 +199,15 @@ void stencil3d_v0::store_output()
         col_size = config.col_size;
         coef_0 = config.coef_0;
         stencil_n = config.stencil_n;
+	std_cnt = 0;
+
+        if (PLM_IN_WORD < row_size * col_size * height_size) {
+		//rem_fwd = row_size * col_size * 2;
+		rem_fwd = PLM_IN_WORD - 2 * row_size * col_size;
+	}
+	else {
+		rem_fwd = PLM_OUT_WORD;
+	}
     }
 
     // Store
@@ -196,7 +219,16 @@ void stencil3d_v0::store_output()
 #if (DMA_WORD_PER_BEAT == 0)
         uint32_t store_offset = (row_size*col_size*height_size) * stencil_n;
 #else
-        uint32_t store_offset = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT) * stencil_n;
+	uint32_t store_offset;
+        if (PLM_IN_WORD < row_size * col_size * height_size) {
+	    // Calculation of offset of output memory address
+            //store_offset = round_up(row_size*col_size*height_size*(height_size - (PLM_IN_WORD / row_size * col_size) + 1), DMA_WORD_PER_BEAT) * stencil_n;
+            store_offset = PLM_IN_WORD * (PLM_IN_WORD / (row_size * col_size) + 2);
+	    //cout << "DEBUG_INFO: store offset initial = " << store_offset << endl;
+	}
+	else	{
+            store_offset = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT) * stencil_n;
+	}
 #endif
         uint32_t offset = store_offset;
 
@@ -211,7 +243,7 @@ void stencil3d_v0::store_output()
             uint32_t length = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT);
 #endif
             // Chunking
-            for (int rem = length; rem > 0; rem -= PLM_OUT_WORD)
+            for (int rem = length; rem > 0; rem -= rem_fwd)
             {
 
                 this->store_compute_handshake();
@@ -224,7 +256,9 @@ void stencil3d_v0::store_output()
 #else
                 dma_info_t dma_info(offset / DMA_WORD_PER_BEAT, len / DMA_WORD_PER_BEAT, DMA_SIZE);
 #endif
+		//cout << "DEBUG_INFO: store offset = " << offset << endl;
                 offset += len;
+			
 
                 this->dma_write_ctrl.put(dma_info);
 
@@ -255,24 +289,27 @@ void stencil3d_v0::store_output()
                 for (uint16_t i = 0; i < len; i += DMA_WORD_PER_BEAT)
                 {
                     sc_dt::sc_bv<DMA_WIDTH> dataBv;
-	    	    //cout << "DEBUG::len = " << len << endl;
 
                     // Read from PLM
                     wait();
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
                         HLS_UNROLL_SIMPLE;
-                        if (ping)
+                        if (ping){
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_ping[i + k];
-                        else
+			}
+                        else {
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_pong[i + k];
+			}
                     }
                     this->dma_write_chnl.put(dataBv);
                 }
 #endif
-        	//sc_time end_time_store = sc_time_stamp();
-		//printf("Info: accelerator: END storing output at %f ps\n", end_time_store.to_double());
                 ping = !ping;
+		if (rem < PLM_OUT_WORD) break;
+		std_cnt++;
+                //cout << "DEBUG INFO: SRC store cnt = " << std_cnt << endl;
+		 
             }
         }
     }
@@ -308,10 +345,9 @@ void stencil3d_v0::compute_kernel()
     int32_t col_size;
     int32_t coef_0;
     int32_t stencil_n;
+    int32_t rem_fwd;
     {
         HLS_PROTO("compute-config");
-        //sc_time begin_time = sc_time_stamp();
-	//printf("Info: accelerator: BEGIN Compute Config at %f ps\n", begin_time.to_double());
 
         cfg.wait_for_config(); // config process
         conf_info_t config = this->conf_info.read();
@@ -324,15 +360,19 @@ void stencil3d_v0::compute_kernel()
         col_size = config.col_size;
         coef_0 = config.coef_0;
         stencil_n = config.stencil_n;
-        //sc_time end_time_config = sc_time_stamp();
-	//printf("Info: accelerator: END Compute Config at %f ps\n", end_time_config.to_double());
+
+        if (PLM_IN_WORD < row_size * col_size * height_size) {
+		//rem_fwd = row_size * col_size * 2;
+		rem_fwd = PLM_IN_WORD - 2 * row_size * col_size;
+	}
+	else {
+		rem_fwd = PLM_IN_WORD;
+	}
     }
 
 
     // Compute
     bool ping = true;
-    //sc_time begin_time = sc_time_stamp();
-    //printf("Info: accelerator: BEGIN Compute at %f ps\n", begin_time.to_double());
 
     {
         for (uint16_t b = 0; b < stencil_n; b++)
@@ -340,15 +380,9 @@ void stencil3d_v0::compute_kernel()
             uint32_t in_length = row_size*col_size*height_size;
             uint32_t out_length = row_size*col_size*height_size;
             int out_rem = out_length;
-	    cout << "DEBUG::in_length = " << in_length << endl;
-	    cout << "DEBUG::out_length = " << out_length << endl;
-	    cout << "DEBUG::out_rem = " << out_rem << endl;
-	    cout << "DEBUG::PLM_IN_WORD = " << PLM_IN_WORD << endl;
-	    cout << "DEBUG::PLM_OUT_WORD = " << PLM_OUT_WORD << endl;
-	    cout << "DEBUG::DMA_SIZE = " << DMA_SIZE << endl;
 
 
-            for (int in_rem = in_length; in_rem > 0; in_rem -= PLM_IN_WORD)
+            for (int in_rem = in_length; in_rem > 0; in_rem -= rem_fwd)
             {
 
                 uint32_t in_len  = in_rem  > PLM_IN_WORD  ? PLM_IN_WORD  : in_rem;
@@ -358,26 +392,18 @@ void stencil3d_v0::compute_kernel()
 
                 // Computing phase implementation v0 
                 if (ping) {
-			boundary_fill(row_size, col_size, height_size, plm_in_ping, plm_out_ping);
-			stencil_compute(coef_0, coef_1, row_size, col_size, height_size, plm_in_ping, plm_out_ping);
+			//boundary_fill(in_rem, row_size, col_size, height_size, plm_in_ping, plm_out_ping);
+			stencil_compute((in_length - in_rem), coef_0, coef_1, row_size, col_size, height_size, plm_in_ping, plm_out_ping);
 		}
 		else {
-			boundary_fill(row_size, col_size, height_size, plm_in_pong, plm_out_pong);
-			stencil_compute(coef_0, coef_1, row_size, col_size, height_size, plm_in_pong, plm_out_pong);
+			//boundary_fill(row_size, col_size, height_size, plm_in_pong, plm_out_pong);
+			stencil_compute((in_length - in_rem), coef_0, coef_1, row_size, col_size, height_size, plm_in_pong, plm_out_pong);
 		}
 
-                // for (int i = 0; i < in_len; i++) {
-                //    if (ping)
-                //        plm_out_ping[i] = plm_in_ping[i];
-                //    else
-                //        plm_out_pong[i] = plm_in_pong[i];
-                // }
 
                 out_rem -= PLM_OUT_WORD;
                 this->compute_store_handshake();
                 ping = !ping;
-    		//sc_time end_time_compute = sc_time_stamp();
-    		//printf("Info: accelerator: END Compute at %f ps\n", end_time_compute.to_double());
             }
         }
 
