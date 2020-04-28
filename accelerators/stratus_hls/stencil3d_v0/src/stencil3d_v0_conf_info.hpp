@@ -22,10 +22,10 @@ public:
     conf_info_t()
     {
         /* <<--ctor-->> */
-        this->row_size = 6;
-        this->height_size = 10;
+        this->row_size = 16;
+        this->height_size = 32;
         this->coef_1 = -1;
-        this->col_size = 6;
+        this->col_size = 16;
         this->coef_0 = 6;
         this->stencil_n = 1;
     }

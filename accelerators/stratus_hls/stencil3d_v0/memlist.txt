@@ -1,2 +1,4 @@
-stencil3d_v0_plm_block_in_dma32_1w1r 16384 32 1w:0r 0w:1r
-stencil3d_v0_plm_block_out_dma32_1w1r 16384 32 1w:0r 0w:1r
+stencil3d_v0_plm_block_in_dma32_1w1r 1024 32 1w:0r 0w:1r
+stencil3d_v0_plm_block_out_dma32_1w1r 1024 32 1w:0r 0w:1r
+#stencil3d_v0_plm_block_in_dma32_1w1r 16384 32 1w:0r 0w:1r
+#stencil3d_v0_plm_block_out_dma32_1w1r 16384 32 1w:0r 0w:1r

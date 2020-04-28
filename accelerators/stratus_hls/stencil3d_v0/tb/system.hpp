@@ -64,10 +64,10 @@ public:
         acc->debug(debug);
 
         /* <<--params-default-->> */
-        row_size = 6;
-        height_size = 10;
+        row_size = 16;
+        height_size = 32;
         coef_1 = -1;
-        col_size = 6;
+        col_size = 16;
         coef_0 = 6;
         stencil_n = 1;
     }
@@ -99,7 +99,9 @@ public:
     uint32_t out_words_adj;
     uint32_t fwd;
     uint32_t cnt;
+    uint32_t cnt_dump;
     uint32_t mem_idx;
+    uint32_t mem_dump_idx;
     uint32_t in_size;
     uint32_t out_size;
     TYPE *in;
