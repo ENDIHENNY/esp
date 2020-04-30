@@ -255,7 +255,22 @@ void system_t::load_memory()
 		sc_dt::sc_bv<DMA_WIDTH> data_bv(in[i]);
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
 		    data_bv.range((j+1) * DATA_WIDTH - 1, j * DATA_WIDTH) = in[i * DMA_WORD_PER_BEAT + j];
-		mem[i] = data_bv;
+		mem[mem_idx] = data_bv;
+		mem_idx++;
+
+		if (PLM_IN_WORD < in_words_adj) {
+			#if (DMA_WORD_PER_BEAT == 1)
+				if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
+					i = i - (PLM_IN_WORD - fwd);
+					cnt++;
+				}
+			#elif (DMA_WORD_PER_BEAT == 2)
+				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
+					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
+					cnt++;
+				}
+			#endif
+		}
 	    }
 	#endif
 
@@ -329,9 +344,38 @@ void system_t::dump_memory()
 	    }
 	#else
 	    offset = offset / DMA_WORD_PER_BEAT;
-	    for (int i = 0; i < out_size / DMA_WORD_PER_BEAT; i++)
-		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
-		    out[i * DMA_WORD_PER_BEAT + j] = mem[offset + i].range((j + 1) * DATA_WIDTH - 1, j * DATA_WIDTH).to_int64();
+	    if (PLM_OUT_WORD < row_size * col_size * height_size) {
+	    	for (int i = 0; i < out_size / DMA_WORD_PER_BEAT; i++) {
+			for (int j = 0; j < DMA_WORD_PER_BEAT; j++) {
+			    int out_temp = mem[offset + mem_dump_idx].range((j + 1) * DATA_WIDTH - 1, j * DATA_WIDTH).to_int64();
+			    if ( out_temp  ==  INT_MAX ) {
+				continue;
+  			    }
+			    out[i * DMA_WORD_PER_BEAT + j] = out_temp;
+			    //cout << "DEBUG_INFO: dump out  = " << (float) out_fx << endl;
+			    }
+
+			    mem_dump_idx++;
+
+
+			    if ((i - cnt_dump * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_OUT_WORD / DMA_WORD_PER_BEAT) == 0) {
+				i = i - (PLM_OUT_WORD - fwd) / DMA_WORD_PER_BEAT;
+				cnt_dump++;
+				//cout << "DEBUG_INFO: dump again to i = " << (i + 1) * DMA_WORD_PER_BEAT << endl;
+				//cout << "DEBUG_INFO: dump again from addr  = " << offset + mem_dump_idx << endl;
+
+			    }
+			    //cout << "DEBUG_INFO: dump from addr  = " << offset + mem_dump_idx << endl;
+		        }
+
+
+	    }
+
+	    else {
+		    for (int i = 0; i < out_size / DMA_WORD_PER_BEAT; i++)
+			for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
+			    out[i * DMA_WORD_PER_BEAT + j] = mem[offset + i].range((j + 1) * DATA_WIDTH - 1, j * DATA_WIDTH).to_int64();
+	    }
 	#endif
 
 #elif (TYPEDEF == 1)
@@ -396,8 +440,8 @@ int system_t::validate()
         for (int j = 0; j < row_size*col_size*height_size; j++){
             if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH) {
                 errors++;
-	        cout << "DEBUG Info: out[" << i * out_words_adj + j <<"]" << " = " <<  out[i * out_words_adj + j] <<endl;
-	        cout << "DEBUG Info: gold[" << i * out_words_adj + j <<"]" << " = " <<  gold[i * out_words_adj + j] <<endl;
+	        //cout << "DEBUG Info: out[" << i * out_words_adj + j <<"]" << " = " <<  out[i * out_words_adj + j] <<endl;
+	        //cout << "DEBUG Info: gold[" << i * out_words_adj + j <<"]" << " = " <<  gold[i * out_words_adj + j] <<endl;
  	    }
 		
 	}

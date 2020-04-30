@@ -11,6 +11,8 @@
 #include <esp_probe.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
+//#include <random>
 
 typedef int32_t token_t;
 
@@ -29,6 +31,7 @@ const int32_t height_size = 32;
 const int32_t coef_1 = -1;
 const int32_t col_size = 32;
 const int32_t coef_0 = 6;
+const int32_t stencil_n = 1;
 
 static unsigned in_words_adj;
 static unsigned out_words_adj;
@@ -54,89 +57,125 @@ static unsigned mem_size;
 #define STENCIL3D_V0_COL_SIZE_REG 0x44
 #define STENCIL3D_V0_COEF_0_REG 0x40
 
+//static std::uniform_real_distribution<float> *dis;
+//static std::random_device rd;
+//static std::mt19937 *gen;
+
+//static void init_random_distribution(void)
+//{
+//    // Different type of LO & HO needs different format of the value
+//
+//    gen = new std::mt19937(rd());
+//    const float LO = 0.0;
+//    const float HI = 100.0;
+//    default_random_engine generator;
+//    dis = new std::uniform_real_distribution<float>(LO, HI);
+//    //const int LO = 0;
+//    //const int HI = 100;
+//    //default_random_engine generator;
+//    //dis = new std::uniform_int_distribution<int>(LO, HI);
+//}
+
+
+
+static float gen_random_num(float min, float max)
+{
+    return (max - min) * ((((float) rand()) / (float) RAND_MAX) + min);
+}
+
 
 static int validate_buf(token_t *out, token_t *gold)
 {
-	int i;
-	int j;
-	unsigned errors = 0;
-
-	for (i = 0; i < 1; i++)
-		for (j = 0; j < row_size*col_size*height_size; j++)
-			if (gold[i * out_words_adj + j] != out[i * out_words_adj + j])
-				errors++;
-
-	return errors;
-}
-
-#define MAX 1000
-#define MIN 1
-static void init_buf (token_t *in, token_t * gold)
-{
     int i;
     int j;
-    int k;
-    rand();
-    for (i = 0; i < 1; i++) {
-	for (j = 0; j < row_size*col_size*height_size; j++) {
-		in[i * in_words_adj + j] = rand() % (MAX-MIN) + MIN;
+
+    unsigned errors = 0;
+    const float ERR_TH = 0.05;
+
+    for (i = 0; i < stencil_n; i++)
+        for (j = 0; j < row_size*col_size*height_size; j++){
+            if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH) {
+                errors++;
+ 	    }
+		
 	}
 
-    }
-	
-    for(j=0; j<col_size; j++) {
-        for(k=0; k<row_size; k++) {
-	    int32_t index0 = k + row_size * j; 
- 	    int32_t index1 = k + row_size * (j + col_size * (height_size-1)); 
-	    gold[index0] = in[index0];
- 	    gold[index1] = in[index1];
+    return errors;
+}
 
-              }
-    }
-    for(i=1; i<height_size-1; i++) {
-        for(k=0; k<row_size; k++) {
-	    int32_t index0 = k + row_size * col_size * i;
-	    int32_t index1 = k + row_size * ((col_size-1) + col_size*i);
-	    gold[index0] = in[index0];
-	    gold[index1] = in[index1];
-        }
-    }
-    for(i=1; i<height_size-1; i++) {
-        for(j=1; j<col_size-1; j++) {
-	    int32_t index0 = row_size * (j + col_size * i);
-	    int32_t index1 = row_size-1 + row_size * (j + col_size * i);
-	    gold[index0] = in[index0];
-	    gold[index1] = in[index1];
-        }
+static void init_buf (token_t *in, token_t * gold)
+{
+
+    //init_random_distribution();
+
+    int i;
+    int j;
+    const float min = 0.0;
+    const float max = 100.0;
+
+    for (i = 0; i < stencil_n; i++) {
+        for (j = 0; j < row_size*col_size*height_size; j++) {
+            in[i * in_words_adj + j] = gen_random_num(min, max);
+	    }
     }
 
-    int32_t sum0 = 0;
-    int32_t sum1 = 0;
-    int32_t mul0 = 0;
-    int32_t mul1 = 0;
+    // Compute golden output
+    int k = 0;
+    int l = 0;
 
-    // Stencil computation
-    for(i = 1; i < height_size - 1; i++){
-        for(j = 1; j < col_size - 1; j++){
-            for(k = 1; k < row_size - 1; k++){
-		int32_t index0 = k + row_size * (j + col_size * i);
-		int32_t index1 = k + row_size * (j + col_size * (i + 1));
-		int32_t index2 = k + row_size * (j + col_size * (i - 1));
-		int32_t index3 = k + row_size * (j + 1 + col_size * i);
-		int32_t index4 = k + row_size * (j - 1 + col_size * i);
-		int32_t index5 = k + 1 + row_size * (j + col_size * i);
-		int32_t index6 = k - 1 + row_size * (j + col_size * i);
-		
-		int32_t sum0 = in[index0];
-		int32_t sum1 = in[index1] + in[index2] + in[index3] + 
-		       in[index4] + in[index5] + in[index6];
-		int32_t mul0 = sum0 * coef_0;
-                int32_t mul1 = sum1 * coef_1;
-		gold[index0] = mul0 + mul1;
+    for(l=0; l<stencil_n; l++) {
 
-                    }
-        }
+	    for(j=0; j<col_size; j++) {
+		for(k=0; k<row_size; k++) {
+		    int index0 = l * out_words_adj + k + row_size * j; 
+		    int index1 = l * out_words_adj + k + row_size * (j + col_size * (height_size-1)); 
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
+
+		      }
+	    }
+	    for(i=1; i<height_size-1; i++) {
+		for(k=0; k<row_size; k++) {
+		    int index0 = l * out_words_adj + k + row_size * col_size * i;
+		    int index1 = l * out_words_adj + k + row_size * ((col_size-1) + col_size*i);
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
+		}
+	    }
+	    for(i=1; i<height_size-1; i++) {
+		for(j=1; j<col_size-1; j++) {
+		    int index0 = l * out_words_adj + row_size * (j + col_size * i);
+		    int index1 = l * out_words_adj + row_size-1 + row_size * (j + col_size * i);
+		    gold[index0] = in[index0];
+		    gold[index1] = in[index1];
+		}
+	    }
+
+	    // Stencil computation
+	    for(i = 1; i < height_size - 1; i++){
+		for(j = 1; j < col_size - 1; j++){
+		    for(k = 1; k < row_size - 1; k++){
+			int index0 = l * out_words_adj + k + row_size * (j + col_size * i);
+			int index1 = l * out_words_adj + k + row_size * (j + col_size * (i + 1));
+			int index2 = l * out_words_adj + k + row_size * (j + col_size * (i - 1));
+			int index3 = l * out_words_adj + k + row_size * (j + 1 + col_size * i);
+			int index4 = l * out_words_adj + k + row_size * (j - 1 + col_size * i);
+			int index5 = l * out_words_adj + k + 1 + row_size * (j + col_size * i);
+			int index6 = l * out_words_adj + k - 1 + row_size * (j + col_size * i);
+			
+			float sum0 = in[index0];
+			float sum1 = in[index1] + in[index2] + in[index3] + 
+			       in[index4] + in[index5] + in[index6];
+			float mul0 = sum0 * coef_0;
+			float mul1 = sum1 * coef_1;
+
+			gold[index0] = mul0 + mul1;
+			    }
+		}
+    	}
     }
+
+}
 //	int i;
 //	int j;
 //
@@ -147,7 +186,7 @@ static void init_buf (token_t *in, token_t * gold)
 //	for (i = 0; i < 1; i++)
 //		for (j = 0; j < row_size*col_size*height_size; j++)
 //			gold[i * out_words_adj + j] = (token_t) j;
-}
+//}
 
 
 int main(int argc, char * argv[])

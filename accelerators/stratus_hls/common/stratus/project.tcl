@@ -71,8 +71,8 @@ set_attr lsb_trimming             true
 #
 #set_attr sched_effort to get lowest possible latency
 set_attr sched_asap on
-set_attr sharing_effort_parts low
-set_attr sharing_effort_regs low
+set_attr sharing_effort_parts high
+set_attr sharing_effort_regs high
 
 set PRINT on
 set COMMON_HLS_FLAGS "--prints=$PRINT"

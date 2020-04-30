@@ -119,8 +119,8 @@ void stencil3d_v0::load_input()
 #else
                 for (uint16_t i = 0; i < len; i += DMA_WORD_PER_BEAT)
                 {
-                    HLS_BREAK_DEP(plm_in_ping);
-                    HLS_BREAK_DEP(plm_in_pong);
+                    //HLS_BREAK_DEP(plm_in_ping);
+                    //HLS_BREAK_DEP(plm_in_pong);
 
                     sc_dt::sc_bv<DMA_WIDTH> dataBv;
 
@@ -130,7 +130,7 @@ void stencil3d_v0::load_input()
                     // Write to PLM (all DMA_WORD_PER_BEAT words in one cycle)
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
-                        HLS_UNROLL_SIMPLE;
+                        HLS_LOAD_PLM_WRITE;
                         if (ping) {
                             plm_in_ping[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
 			}
@@ -291,7 +291,7 @@ void stencil3d_v0::store_output()
                     wait();
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
-                        HLS_UNROLL_SIMPLE;
+                        HLS_STORE_PLM_READ;
                         if (ping){
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_ping[i + k];
 			    //cout << "DEBUG Info : plm_out_ping ["<< i + k << "]" << " = " << plm_out_ping[i + k] << endl;

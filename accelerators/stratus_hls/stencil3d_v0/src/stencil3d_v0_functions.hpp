@@ -1,6 +1,7 @@
 #ifndef _STENCIL3D_V0_FUNCTIONS_HPP_
 #define _STENCIL3D_V0_FUNCTIONS_HPP_
 #include "stencil3d_v0.hpp"
+#include "stencil3d_v0_directives.hpp"
 
 void stencil_compute(int in_len, int plm_adj, int32_t C0, int32_t C1, int32_t row_size, int32_t col_size, int32_t height_size, sc_dt::sc_int<DATA_WIDTH> orig[PLM_IN_WORD], sc_dt::sc_int<DATA_WIDTH> sol[PLM_OUT_WORD]) {
  
@@ -12,6 +13,10 @@ void stencil_compute(int in_len, int plm_adj, int32_t C0, int32_t C1, int32_t ro
     // -> for PLM_IN_WORD < input_size
     if (PLM_IN_WORD < row_size * col_size * height_size) {
 	    for (int i = 0; i < in_len; i++) {
+		
+		HLS_COMPUTE_STENCIL;		
+
+
 		int index0 = i;	
 		int index1 = index0 + map;	
 		int index2 = index0 - map;	
@@ -79,6 +84,9 @@ void stencil_compute(int in_len, int plm_adj, int32_t C0, int32_t C1, int32_t ro
 				int32_t mul0 = sum0 * C0;
 				int32_t mul1 = sum1 * C1;
 				sol[index0] = mul0 + mul1;
+    				count_compute++;
+    				//cout << "DEBUG Info: Compute " << count_compute << " DONE, sol = " << mul0+mul1 << endl;
+				continue;
 			
 			#elif (TYPEDEF == 1)
 				//int2fp(FPDATA temp[PLM_IN_WORD], orig);
@@ -88,14 +96,18 @@ void stencil_compute(int in_len, int plm_adj, int32_t C0, int32_t C1, int32_t ro
 				FPDATA mul1 = ((FPDATA) C1) * sum1;
 				sol[index0] = fp2int<FPDATA, WORD_SIZE>(mul0 + mul1);
     				count_compute++;
-    				cout << "DEBUG Info: Compute " << count_compute << " DONE, sol = " << mul0+mul1 << endl;
+    				//cout << "DEBUG Info: Compute " << count_compute << " DONE, sol = " << mul0+mul1 << endl;
 				continue;
 			#endif
 
 		}
     			        //cout << "DEBUG Info: Compute LEFT, abs_idx = " << abs_idx << endl;
     			        //cout << "DEBUG Info: Compute LEFT, index0 = " << index0 << endl;
+    			#if (TYPEDEF == 0)
+				sol[index0] = INT_MAX;
+			#elif (TYPEDEF == 1)
 				sol[index0] = 0;
+			#endif
 	
 	    }
     				//cout << "DEBUG Info: Compute time = " << count_compute << endl;
