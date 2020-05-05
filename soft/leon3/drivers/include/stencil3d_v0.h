@@ -23,6 +23,7 @@ struct stencil3d_v0_access {
 	unsigned coef_1;
 	unsigned col_size;
 	unsigned coef_0;
+	unsigned stencil_n;
 	unsigned src_offset;
 	unsigned dst_offset;
 };

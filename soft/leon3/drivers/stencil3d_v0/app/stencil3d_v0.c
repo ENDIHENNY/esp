@@ -21,7 +21,7 @@ static float gen_random_num(float min, float max)
 }
 
 
-static int validate_buf(token_t *out, token_t *gold)
+static int validate_buffer(token_t *out, token_t *gold)
 {
     int i;
     int j;
@@ -40,7 +40,7 @@ static int validate_buf(token_t *out, token_t *gold)
     return errors;
 }
 
-static void init_buf (token_t *in, token_t * gold)
+static void init_buffer(token_t *in, token_t * gold)
 {
 
     //init_random_distribution();

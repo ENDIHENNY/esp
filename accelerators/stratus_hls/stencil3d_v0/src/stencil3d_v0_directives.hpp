@@ -40,20 +40,19 @@
 # define HLS_LOAD_PLM_WRITE			\
     HLS_UNROLL_SIMPLE;				\
     HLS_BREAK_DEP(plm_in_ping);			\
-    HLS_BREAK_DEP(plm_in_pong);
+    HLS_BREAK_DEP(plm_in_pong);	HLS_CONSTRAIN_LATENCY(0, HLS_ACHIEVABLE, "constraint-LOAD"); 
 
 // Compute
 # define HLS_COMPUTE_STENCIL 			\
     HLS_UNROLL_SIMPLE;				\
     HLS_BREAK_DEP(sol);				\
-    HLS_BREAK_DEP(orig);			\
-    HLS_CONSTRAIN_LATENCY(0, HLS_ACHIEVABLE, "constraint-COMPUTE"); \
+    HLS_BREAK_DEP(orig); HLS_CONSTRAIN_LATENCY(0, HLS_ACHIEVABLE, "constraint-COMPUTE"); 
 
 // Store
 # define HLS_STORE_PLM_READ			\
     HLS_UNROLL_SIMPLE;				\
     HLS_BREAK_DEP(plm_out_ping);		\
-    HLS_BREAK_DEP(plm_out_pong);
+    HLS_BREAK_DEP(plm_out_pong); HLS_CONSTRAIN_LATENCY(0, HLS_ACHIEVABLE, "constraint-STORE"); 
 
 #else
 

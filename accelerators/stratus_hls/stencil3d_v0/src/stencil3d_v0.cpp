@@ -52,10 +52,12 @@ void stencil3d_v0::load_input()
         coef_0 = config.coef_0;
         stencil_n = config.stencil_n;
 	load_cnt = 0;
+        map_adj = PLM_IN_WORD / (2 * row_size * col_size);
 
         if (PLM_IN_WORD < row_size * col_size * height_size) {
+		cout << "DEBUG_Info: map_n = " << map_adj << endl;
 		//rem_fwd = row_size * col_size * 1;
-		rem_fwd = PLM_IN_WORD - 2 * row_size * col_size;
+		rem_fwd = PLM_IN_WORD - map_adj * row_size * col_size;
 	}
 	else {
 		rem_fwd = PLM_IN_WORD;
@@ -136,6 +138,7 @@ void stencil3d_v0::load_input()
 			}
                         else  {
 			    plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
+			wait();
 			    //cout << "DEBUG Info: plm_in_pong = " << plm_in_pong[i + k] << endl;
 			}
                     }
@@ -291,13 +294,13 @@ void stencil3d_v0::store_output()
                     wait();
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
-                        HLS_STORE_PLM_READ;
-                        if (ping){
+                        HLS_STORE_PLM_READ; if (ping){
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_ping[i + k];
 			    //cout << "DEBUG Info : plm_out_ping ["<< i + k << "]" << " = " << plm_out_ping[i + k] << endl;
 			}
                         else {
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_pong[i + k];
+			wait();
 			    //cout << "DEBUG Info : plm_out_pong = " << plm_out_pong[i + k] << endl;
 			}
                     }

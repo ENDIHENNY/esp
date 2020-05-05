@@ -22,7 +22,7 @@ use_hls_lib "./memlib"
 #
 if {$TECH eq "virtex7"} {
     # Library is in ns, but simulation uses ps!
-    set CLOCK_PERIOD 200.0
+    set CLOCK_PERIOD 100.0
     set SIM_CLOCK_PERIOD 5000.0
     set_attr default_input_delay      0.1
 }

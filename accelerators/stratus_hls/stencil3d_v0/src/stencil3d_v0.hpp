@@ -22,8 +22,8 @@
 #endif
 
 #define DMA_SIZE SIZE_WORD
-//#define PLM_OUT_WORD 16384
-//#define PLM_IN_WORD 16384
+//#define PLM_OUT_WORD 8192
+//#define PLM_IN_WORD 8192
 //#define PLM_OUT_WORD 144
 //#define PLM_IN_WORD 144
 #define PLM_OUT_WORD 1024
@@ -66,6 +66,7 @@ public:
     // Functions
 
     // Private local memories
+    int32_t map_adj;
     int32_t rem_fwd;
     sc_dt::sc_int<DATA_WIDTH> plm_in_ping[PLM_IN_WORD];
     sc_dt::sc_int<DATA_WIDTH> plm_in_pong[PLM_IN_WORD];

@@ -13,6 +13,7 @@ typedef int32_t token_t;
 #define COEF_1 -1
 #define COL_SIZE 32
 #define COEF_0 6
+#define STENCIL_N 1
 
 /* <<--params-->> */
 const int32_t row_size = ROW_SIZE;
@@ -20,6 +21,7 @@ const int32_t height_size = HEIGHT_SIZE;
 const int32_t coef_1 = COEF_1;
 const int32_t col_size = COL_SIZE;
 const int32_t coef_0 = COEF_0;
+const int32_t stencil_n = STENCIL_N;
 
 #define NACC 1
 
@@ -34,6 +36,7 @@ esp_thread_info_t cfg_000[] = {
 		.desc.stencil3d_v0_desc.coef_1 = COEF_1,
 		.desc.stencil3d_v0_desc.col_size = COL_SIZE,
 		.desc.stencil3d_v0_desc.coef_0 = COEF_0,
+		.desc.stencil3d_v0_desc.stencil_n = STENCIL_N,
 		.desc.stencil3d_v0_desc.src_offset = 0,
 		.desc.stencil3d_v0_desc.dst_offset = 0,
 		.desc.stencil3d_v0_desc.esp.coherence = ACC_COH_NONE,

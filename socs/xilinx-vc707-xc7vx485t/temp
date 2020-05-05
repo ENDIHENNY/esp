@@ -1,0 +1,12 @@
+    RUN stencil3d_v0-exe
+make[1]: Entering directory `/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/accelerators/stratus_hls/stencil3d_v0/sim'
+    RUN run
+DEBUG::in_length = 16384
+DEBUG::out_length = 16384
+DEBUG::out_rem = 16384
+DEBUG::PLM_IN_WORD = 16384
+DEBUG::PLM_OUT_WORD = 16384
+DEBUG::DMA_SIZE = 010
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+make[1]: Leaving directory `/home/esp2020/xp2175/spring2020/prj-spring2020-xp2175/esp/accelerators/stratus_hls/stencil3d_v0/sim'

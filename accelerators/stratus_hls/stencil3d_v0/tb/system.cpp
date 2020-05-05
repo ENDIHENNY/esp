@@ -150,8 +150,8 @@ void system_t::load_memory()
 
     in_size = in_words_adj * stencil_n;
     out_size = out_words_adj * stencil_n;
-    //fwd = row_size * col_size * 1;
-    fwd = PLM_IN_WORD - 2 * row_size * col_size;
+    map_adj = PLM_IN_WORD / (2 * row_size * col_size);
+    fwd = PLM_IN_WORD - map_adj * row_size * col_size;
     cnt = 0;
     mem_idx = 0;
     ESP_REPORT_INFO("DEBUG Info: Start initializing input\n");
@@ -440,8 +440,8 @@ int system_t::validate()
         for (int j = 0; j < row_size*col_size*height_size; j++){
             if ((fabs(gold[i * out_words_adj + j] - out[i * out_words_adj + j]) / fabs(gold[i * out_words_adj + j])) > ERR_TH) {
                 errors++;
-	        //cout << "DEBUG Info: out[" << i * out_words_adj + j <<"]" << " = " <<  out[i * out_words_adj + j] <<endl;
-	        //cout << "DEBUG Info: gold[" << i * out_words_adj + j <<"]" << " = " <<  gold[i * out_words_adj + j] <<endl;
+	        cout << "DEBUG Info: out[" << i * out_words_adj + j <<"]" << " = " <<  out[i * out_words_adj + j] <<endl;
+	        cout << "DEBUG Info: gold[" << i * out_words_adj + j <<"]" << " = " <<  gold[i * out_words_adj + j] <<endl;
  	    }
 		
 	}
