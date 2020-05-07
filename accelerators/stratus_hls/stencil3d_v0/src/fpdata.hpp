@@ -22,6 +22,8 @@ const unsigned int FPDATA_WL = FX_WIDTH;
 const unsigned int FPDATA_IL = FX64_IL;
 #elif (FX_WIDTH==32)
 const unsigned int FPDATA_IL = FX32_IL;
+#elif (FX_WIDTH==24)
+const unsigned int FPDATA_IL = 12;
 #endif // FX_WIDTH
 
 const unsigned int FPDATA_PL = (FPDATA_WL - FPDATA_IL);

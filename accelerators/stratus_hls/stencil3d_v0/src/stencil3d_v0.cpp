@@ -53,10 +53,10 @@ void stencil3d_v0::load_input()
         stencil_n = config.stencil_n;
 	load_cnt = 0;
         map_adj = PLM_IN_WORD / (2 * row_size * col_size);
+	
+	cout << "DEBUG_Info: DMA_WIDTH = " << DMA_WIDTH << endl;
 
         if (PLM_IN_WORD < row_size * col_size * height_size) {
-		cout << "DEBUG_Info: map_n = " << map_adj << endl;
-		//rem_fwd = row_size * col_size * 1;
 		rem_fwd = PLM_IN_WORD - map_adj * row_size * col_size;
 	}
 	else {
@@ -253,7 +253,7 @@ void stencil3d_v0::store_output()
 #else
                 dma_info_t dma_info(offset / DMA_WORD_PER_BEAT, len / DMA_WORD_PER_BEAT, DMA_SIZE);
 #endif
-		////cout << "DEBUG_INFO: store offset = " << offset << endl;
+		cout << "DEBUG_INFO: DMA_SIZE = " << DMA_SIZE << endl;
                 offset += len;
 		//cout << "DEBUG_INFO: store offset = " << offset / DMA_WORD_PER_BEAT << endl;
 		//cout << "DEBUG_INFO: store len = " << len / DMA_WORD_PER_BEAT << endl;
@@ -394,7 +394,7 @@ void stencil3d_v0::compute_kernel()
 		}
 		else {
 			if (PLM_IN_WORD >= in_length) {
-			    boundary_fill(in_rem, row_size, col_size, height_size, plm_in_ping, plm_out_ping);
+			    boundary_fill(in_rem, row_size, col_size, height_size, plm_in_pong, plm_out_pong);
 			}
 			stencil_compute(in_len, (in_length - in_rem), coef_0, coef_1, row_size, col_size, height_size, plm_in_pong, plm_out_pong);
 		}

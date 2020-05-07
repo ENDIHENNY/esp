@@ -251,6 +251,7 @@ void system_t::load_memory()
 		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);
 	    }
 	#else
+	    cout << "DEBUG Info_tb: DMA_WORD_PER_BEAT" << DMA_WORD_PER_BEAT << endl;
 	    for (int i = 0; i < in_size / DMA_WORD_PER_BEAT; i++)  {
 		sc_dt::sc_bv<DMA_WIDTH> data_bv(in[i]);
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
@@ -259,17 +260,17 @@ void system_t::load_memory()
 		mem_idx++;
 
 		if (PLM_IN_WORD < in_words_adj) {
-			#if (DMA_WORD_PER_BEAT == 1)
-				if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
-					i = i - (PLM_IN_WORD - fwd);
-					cnt++;
-				}
-			#elif (DMA_WORD_PER_BEAT == 2)
+			//#if (DMA_WORD_PER_BEAT == 1)
+			//	if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
+			//		i = i - (PLM_IN_WORD - fwd);
+			//		cnt++;
+			//	}
+			//#elif (DMA_WORD_PER_BEAT > 1)
 				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
 					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
 					cnt++;
 				}
-			#endif
+			//#endif
 		}
 	    }
 	#endif
@@ -283,21 +284,23 @@ void system_t::load_memory()
 		}
 	    }
 	#else
+	    cout << "DEBUG Info_tb: DMA_WORD_PER_BEAT = " << DMA_WORD_PER_BEAT << endl;
 	    for (int i = 0; i < in_size / DMA_WORD_PER_BEAT; i++)  {
 		sc_dt::sc_bv<DMA_WIDTH> data_bv;
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
             	    data_bv.range((j+1) * DATA_WIDTH - 1, j * DATA_WIDTH) = fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i * DMA_WORD_PER_BEAT + j]));
+
 		mem[mem_idx] = data_bv;
 		mem_idx++;
 
 		if (PLM_IN_WORD < in_words_adj) {
-			#if (DMA_WORD_PER_BEAT == 1)
-				if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
-					i = i - (PLM_IN_WORD - fwd);
-					cnt++;
-					//cout << "DEBUG_INFO: load again from i = " << i << endl;
-				}
-			#elif (DMA_WORD_PER_BEAT == 2)
+			//#if (DMA_WORD_PER_BEAT == 1)
+			//	if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
+			//		i = i - (PLM_IN_WORD - fwd);
+			//		cnt++;
+			//		cout << "DEBUG_INFO: load again from i = " << i << endl;
+			//	}
+			//#elif (DMA_WORD_PER_BEAT > 1)
 				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
 					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
 					cnt++;
@@ -305,7 +308,7 @@ void system_t::load_memory()
 					//cout << "DEBUG_INFO: load again from in[i] = " << in[(i + 1)* DMA_WORD_PER_BEAT] << endl;
 					//cout << "DEBUG_INFO: load again store to addr  = " << mem_idx << endl;
 				}
-			#endif
+			//#endif
 		}
 	    }
 	#endif

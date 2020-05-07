@@ -15,9 +15,9 @@
 #define __round_mask(x, y) ((y)-1)
 #define round_up(x, y) ((((x)-1) | __round_mask(x, y))+1)
 /* <<--defines-->> */
-#if (TYPE == 0)
+#if (TYPEDEF == 0)
 	#define DATA_WIDTH 32
-#elif (TYPE == 1)
+#elif (TYPEDEF == 1)
 	#define DATA_WIDTH FX_WIDTH
 #endif
 

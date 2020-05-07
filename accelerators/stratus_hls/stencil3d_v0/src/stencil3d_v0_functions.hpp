@@ -7,10 +7,7 @@ void stencil_compute(int in_len, int plm_adj, int32_t C0, int32_t C1, int32_t ro
  
     int32_t map = row_size * col_size;
     int count_compute = 0;
-    ////cout << "DEBUG Info: plm_adj = " << plm_adj << endl;
-    //cout << "DEBUG Info: in_len = " << in_len << endl;
 
-    // -> for PLM_IN_WORD < input_size
     if (PLM_IN_WORD < row_size * col_size * height_size) {
 	    for (int i = 0; i < in_len; i++) {
 		

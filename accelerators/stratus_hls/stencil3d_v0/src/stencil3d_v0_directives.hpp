@@ -14,6 +14,16 @@
 	#define DMA_WORD_PER_BEAT 2
 	#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma64_2w1r"
 	#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma64_1w2r"
+#elif (DMA_WIDTH == 256)
+	#define DMA_BEAT_PER_WORD 1
+	#define DMA_WORD_PER_BEAT 8
+	#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma256_8w1r"
+	#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma256_1w8r"
+#elif (DMA_WIDTH == 128)
+	#define DMA_BEAT_PER_WORD 1
+	#define DMA_WORD_PER_BEAT 4
+	#define PLM_IN_NAME "stencil3d_v0_plm_block_in_dma128_4w1r"
+	#define PLM_OUT_NAME "stencil3d_v0_plm_block_out_dma128_1w4r"
 #endif
 
 
