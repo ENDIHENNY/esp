@@ -6,7 +6,8 @@
 
 // Functions
 
-#include "stencil3d_v0_functions.hpp"
+//#include "stencil3d_v0_functions_bk.hpp" //small but slow
+#include "stencil3d_v0_functions.hpp"      //large but fast
 using namespace std;
 
 // Processes
@@ -52,13 +53,12 @@ void stencil3d_v0::load_input()
         coef_0 = config.coef_0;
         stencil_n = config.stencil_n;
 	load_cnt = 0;
-        map_adj = PLM_IN_WORD / (2 * row_size * col_size);
+        map_adj = PLM_IN_WORD / (2 * row_size * col_size); // map_adj - adjust factor for different input size
 	
-	cout << "DEBUG_Info: DMA_WIDTH = " << DMA_WIDTH << endl;
 
         if (PLM_IN_WORD < row_size * col_size * height_size) {
-		rem_fwd = PLM_IN_WORD - map_adj * row_size * col_size;
-	}
+		rem_fwd = PLM_IN_WORD - map_adj * row_size * col_size; // rem_fwd - address increment after every load/store/compute
+	} 
 	else {
 		rem_fwd = PLM_IN_WORD;
 	}
@@ -85,6 +85,7 @@ void stencil3d_v0::load_input()
             for (int rem = length; rem > 0; rem -= rem_fwd)
             {
                 wait();
+		HLS_UNROLL_SIMPLE;	
                 // Configure DMA transaction
                 uint32_t len = rem > PLM_IN_WORD ? PLM_IN_WORD : rem;
 #if (DMA_WORD_PER_BEAT == 0)
@@ -93,9 +94,6 @@ void stencil3d_v0::load_input()
 #else
                 dma_info_t dma_info(offset / DMA_WORD_PER_BEAT, len / DMA_WORD_PER_BEAT, DMA_SIZE);
 #endif
-		//cout << "DEBUG_INFO: load offset = " << offset / DMA_WORD_PER_BEAT << endl;
-		//cout << "DEBUG_INFO: load len = " << len / DMA_WORD_PER_BEAT << endl;
-		//cout << "DEBUG_INFO: load rem = " << rem << endl;
                 offset += len;
 
                 this->dma_read_ctrl.put(dma_info);
@@ -121,8 +119,6 @@ void stencil3d_v0::load_input()
 #else
                 for (uint16_t i = 0; i < len; i += DMA_WORD_PER_BEAT)
                 {
-                    //HLS_BREAK_DEP(plm_in_ping);
-                    //HLS_BREAK_DEP(plm_in_pong);
 
                     sc_dt::sc_bv<DMA_WIDTH> dataBv;
 
@@ -139,7 +135,6 @@ void stencil3d_v0::load_input()
                         else  {
 			    plm_in_pong[i + k] = dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH).to_int64();
 			wait();
-			    //cout << "DEBUG Info: plm_in_pong = " << plm_in_pong[i + k] << endl;
 			}
                     }
                 }
@@ -147,8 +142,7 @@ void stencil3d_v0::load_input()
                 this->load_compute_handshake();
                 ping = !ping;
 		load_cnt++;
-		if (rem < PLM_IN_WORD) rem = 0;
-                ////cout << "DEBUG INFO: SRC load cnt = " << load_cnt << endl;
+		//if (rem < PLM_IN_WORD) rem = 0;
 		
             }
         }
@@ -220,7 +214,6 @@ void stencil3d_v0::store_output()
         if (PLM_OUT_WORD < row_size * col_size * height_size) {
 	    // Calculation of offset of output memory address
             store_offset = (row_size * col_size * height_size / rem_fwd - 1) * PLM_IN_WORD + row_size * col_size * height_size - (row_size * col_size * height_size / rem_fwd - 1) * rem_fwd;
-	    //cout << "DEBUG_INFO: store offset initial = " << store_offset << endl;
 	}
 	else	{
             store_offset = round_up(row_size*col_size*height_size, DMA_WORD_PER_BEAT) * stencil_n;
@@ -232,6 +225,8 @@ void stencil3d_v0::store_output()
         // Batching
         for (uint16_t b = 0; b < stencil_n; b++)
         {
+	    
+	    HLS_UNROLL_SIMPLE;	
             wait();
 #if (DMA_WORD_PER_BEAT == 0)
             uint32_t length = row_size*col_size*height_size;
@@ -241,9 +236,9 @@ void stencil3d_v0::store_output()
             // Chunking
             for (int rem = length; rem > 0; rem -= rem_fwd)
             {
+		HLS_UNROLL_SIMPLE;	
 
                 this->store_compute_handshake();
-	        //cout << "DEBUG_INFO: store compute handshake " << endl;
 
                 // Configure DMA transaction
                 uint32_t len = rem > PLM_OUT_WORD ? PLM_OUT_WORD : rem;
@@ -253,11 +248,7 @@ void stencil3d_v0::store_output()
 #else
                 dma_info_t dma_info(offset / DMA_WORD_PER_BEAT, len / DMA_WORD_PER_BEAT, DMA_SIZE);
 #endif
-		cout << "DEBUG_INFO: DMA_SIZE = " << DMA_SIZE << endl;
                 offset += len;
-		//cout << "DEBUG_INFO: store offset = " << offset / DMA_WORD_PER_BEAT << endl;
-		//cout << "DEBUG_INFO: store len = " << len / DMA_WORD_PER_BEAT << endl;
-		//cout << "DEBUG_INFO: store rem = " << rem << endl;
 			
 
                 this->dma_write_ctrl.put(dma_info);
@@ -288,30 +279,28 @@ void stencil3d_v0::store_output()
 #else
                 for (uint16_t i = 0; i < len; i += DMA_WORD_PER_BEAT)
                 {
+		    HLS_UNROLL_SIMPLE;	
                     sc_dt::sc_bv<DMA_WIDTH> dataBv;
 
                     // Read from PLM
                     wait();
                     for (uint16_t k = 0; k < DMA_WORD_PER_BEAT; k++)
                     {
-                        HLS_STORE_PLM_READ; if (ping){
+                        HLS_STORE_PLM_READ; 
+			if (ping){
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_ping[i + k];
-			    //cout << "DEBUG Info : plm_out_ping ["<< i + k << "]" << " = " << plm_out_ping[i + k] << endl;
 			}
                         else {
                             dataBv.range((k+1) * DATA_WIDTH - 1, k * DATA_WIDTH) = plm_out_pong[i + k];
 			wait();
-			    //cout << "DEBUG Info : plm_out_pong = " << plm_out_pong[i + k] << endl;
 			}
                     }
                     this->dma_write_chnl.put(dataBv);
                 }
 #endif
-		//cout << "DEBUG_INFO: store done" << endl;
                 ping = !ping;
-		if (rem < PLM_IN_WORD) rem = 0;
+		//if (rem < PLM_IN_WORD) rem = 0;
 		std_cnt++;
-                ////cout << "DEBUG INFO: SRC store cnt = " << std_cnt << endl;
 		 
             }
         }
@@ -401,9 +390,7 @@ void stencil3d_v0::compute_kernel()
 
 
                 out_rem -= PLM_OUT_WORD;
-		//cout << "DEBUG Info: Compute ready to handshake" << endl;
                 this->compute_store_handshake();
-		//cout << "DEBUG Info: Compute handshake complete" << endl;
                 ping = !ping;
             }
         }

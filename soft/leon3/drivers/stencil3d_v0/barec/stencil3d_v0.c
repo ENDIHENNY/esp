@@ -29,7 +29,7 @@ static unsigned DMA_WORD_PER_BEAT(unsigned _st)
 const int32_t row_size = 16;
 const int32_t height_size = 32;
 const int32_t coef_1 = -1;
-const int32_t col_size = 32;
+const int32_t col_size = 16;
 const int32_t coef_0 = 6;
 const int32_t stencil_n = 1;
 
@@ -56,6 +56,7 @@ static unsigned mem_size;
 #define STENCIL3D_V0_COEF_1_REG 0x48
 #define STENCIL3D_V0_COL_SIZE_REG 0x44
 #define STENCIL3D_V0_COEF_0_REG 0x40
+#define STENCIL3D_V0_STENCIL_N_REG 0x54
 
 //static std::uniform_real_distribution<float> *dis;
 //static std::random_device rd;
@@ -314,9 +315,9 @@ int main(int argc, char * argv[])
 
 		// Start accelerators
 #ifndef __riscv
-		printf("  Start...\n");
+		printf("  Start stencil3d...\n");
 #else
-		print_uart("  Start...\n");
+		print_uart("  Start stencil3d...\n");
 #endif
 		iowrite32(dev, CMD_REG, CMD_MASK_START);
 
@@ -330,10 +331,10 @@ int main(int argc, char * argv[])
 
 #ifndef __riscv
 		printf("  Done\n");
-		printf("  validating...\n");
+		printf("  validating stencil3d...\n");
 #else
 		print_uart("  Done\n");
-		print_uart("  validating...\n");
+		print_uart("  validating stencil3d...\n");
 #endif
 
 		/* Validation */

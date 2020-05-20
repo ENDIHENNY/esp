@@ -22,12 +22,12 @@
 #endif
 
 #define DMA_SIZE SIZE_WORD
-//#define PLM_OUT_WORD 8192
-//#define PLM_IN_WORD 8192
+//#define PLM_OUT_WORD 65536
+//#define PLM_IN_WORD 65536
 //#define PLM_OUT_WORD 144
 //#define PLM_IN_WORD 144
-#define PLM_OUT_WORD 1024
-#define PLM_IN_WORD 1024
+#define PLM_OUT_WORD 4096
+#define PLM_IN_WORD 4096
 
 class stencil3d_v0 : public esp_accelerator_3P<DMA_WIDTH>
 {

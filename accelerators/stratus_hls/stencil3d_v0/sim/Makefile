@@ -1,6 +1,6 @@
 include ../../common/systemc.mk
 
-FX_WIDTH ?= 32
+FX_WIDTH ?= 24
 FX32_IL   = 12
 FX64_IL   = 42
 TYPEDEF ?= 1 

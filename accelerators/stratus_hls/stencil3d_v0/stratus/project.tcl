@@ -23,7 +23,7 @@ use_hls_lib "./memlib"
 if {$TECH eq "virtex7"} {
     # Library is in ns, but simulation uses ps!
     set CLOCK_PERIOD 100.0
-    set SIM_CLOCK_PERIOD 5000.0
+    set SIM_CLOCK_PERIOD 500.0
     set_attr default_input_delay      0.1
 }
 if {$TECH eq "zynq7000"} {
@@ -68,7 +68,7 @@ define_system_module tb ../tb/system.cpp ../tb/sc_main.cpp
 ######################################################################
 set DEFAULT_ARGV ""
 set FX_IL "-DFX32_IL=12 -DFX64_IL=42"
-foreach dma [list 32 64 128 256] {
+foreach dma [list 32] {
     foreach fx [list 32] {
 	foreach type [list 1]	{
 		define_io_config * IOCFG_FX$fx\_DMA$dma\_TYPE$type -DFX_WIDTH=$fx -DDMA_WIDTH=$dma -DTYPEDEF=$type

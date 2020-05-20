@@ -156,15 +156,13 @@ void system_t::load_memory()
     mem_idx = 0;
     ESP_REPORT_INFO("DEBUG Info: Start initializing input\n");
 
-    // in = new int32_t[in_size];
     in = new TYPE[in_size];
 
     init_random_distribution();
     for (int i = 0; i < stencil_n; i++) {
         for (int j = 0; j < row_size*col_size*height_size; j++) {
             in[i * in_words_adj + j] = gen_random_num();
-	    //cout << "DEBUG_Info : in = " << in[i * in_words_adj + j] << endl;
-	    }
+	}
     }
     ESP_REPORT_INFO("DEBUG Info: Start generating golden output\n");
 
@@ -184,8 +182,6 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + k + row_size * (j + col_size * (height_size-1)); 
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
-		    //cout << "DEBUG Info - height fill : index = " << index0 << endl;
-		    //cout << "DEBUG Info - height fill : index = " << index1 << endl;
 
 		      }
 	    }
@@ -195,8 +191,6 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + k + row_size * ((col_size-1) + col_size*i);
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
-		    //cout << "DEBUG Info - col fill : index = " << index0 << endl;
-		    //cout << "DEBUG Info - col fill : index = " << index1 << endl;
 		}
 	    }
 	    for(i=1; i<height_size-1; i++) {
@@ -205,8 +199,6 @@ void system_t::load_memory()
 		    int32_t index1 = l * out_words_adj + row_size-1 + row_size * (j + col_size * i);
 		    gold[index0] = in[index0];
 		    gold[index1] = in[index1];
-		    //cout << "DEBUG Info - row fill : index = " << index0 << endl;
-		    //cout << "DEBUG Info - row fill : index = " << index1 << endl;
 		}
 	    }
 	    ESP_REPORT_INFO("Finish boundary filling\n");
@@ -228,10 +220,8 @@ void system_t::load_memory()
 			       in[index4] + in[index5] + in[index6];
 			TYPE mul0 = sum0 * coef_0;
 			TYPE mul1 = sum1 * coef_1;
-		        //cout << "DEBUG Info - stencil : index = " << index0 << endl;
 
 			gold[index0] = mul0 + mul1;
-			cout << "DEBUG INFO: gold = " << gold[index0] << endl;
 			    }
 		}
 	    }
@@ -251,7 +241,6 @@ void system_t::load_memory()
 		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);
 	    }
 	#else
-	    cout << "DEBUG Info_tb: DMA_WORD_PER_BEAT" << DMA_WORD_PER_BEAT << endl;
 	    for (int i = 0; i < in_size / DMA_WORD_PER_BEAT; i++)  {
 		sc_dt::sc_bv<DMA_WIDTH> data_bv(in[i]);
 		for (int j = 0; j < DMA_WORD_PER_BEAT; j++)
@@ -260,17 +249,10 @@ void system_t::load_memory()
 		mem_idx++;
 
 		if (PLM_IN_WORD < in_words_adj) {
-			//#if (DMA_WORD_PER_BEAT == 1)
-			//	if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
-			//		i = i - (PLM_IN_WORD - fwd);
-			//		cnt++;
-			//	}
-			//#elif (DMA_WORD_PER_BEAT > 1)
-				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
-					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
-					cnt++;
-				}
-			//#endif
+			if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
+				i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
+				cnt++;
+			}
 		}
 	    }
 	#endif
@@ -280,7 +262,7 @@ void system_t::load_memory()
 	    for (int i = 0; i < in_size; i++)  {
         	sc_dt::sc_bv<DATA_WIDTH> data_bv(fp2bv<FPDATA, WORD_SIZE>(FPDATA(in[i])));
 		for (int j = 0; j < DMA_BEAT_PER_WORD; j++) {
-		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);<< endl;
+		    mem[DMA_BEAT_PER_WORD * i + j] = data_bv.range((j + 1) * DMA_WIDTH - 1, j * DMA_WIDTH);
 		}
 	    }
 	#else
@@ -294,26 +276,14 @@ void system_t::load_memory()
 		mem_idx++;
 
 		if (PLM_IN_WORD < in_words_adj) {
-			//#if (DMA_WORD_PER_BEAT == 1)
-			//	if ((i - cnt * fwd + 1) % (PLM_IN_WORD) == 0) {
-			//		i = i - (PLM_IN_WORD - fwd);
-			//		cnt++;
-			//		cout << "DEBUG_INFO: load again from i = " << i << endl;
-			//	}
-			//#elif (DMA_WORD_PER_BEAT > 1)
-				if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
-					i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
-					cnt++;
-					//cout << "DEBUG_INFO: load again from i = " << i + 1 << endl;
-					//cout << "DEBUG_INFO: load again from in[i] = " << in[(i + 1)* DMA_WORD_PER_BEAT] << endl;
-					//cout << "DEBUG_INFO: load again store to addr  = " << mem_idx << endl;
-				}
-			//#endif
+			if ((i - cnt * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_IN_WORD / DMA_WORD_PER_BEAT) == 0) {
+				i = i - (PLM_IN_WORD - fwd) / DMA_WORD_PER_BEAT;
+				cnt++;
+			}
 		}
 	    }
 	#endif
 #endif
-    //cout << "DEBUG_INFO : mem_addr = " << mem_idx << endl;
     ESP_REPORT_INFO("load memory completed");
 }
 
@@ -327,11 +297,9 @@ void system_t::dump_memory()
 
     if(PLM_OUT_WORD < row_size * col_size * height_size) {
         offset = (row_size * col_size * height_size / fwd - 1) * PLM_IN_WORD + row_size * col_size * height_size - (row_size * col_size * height_size / fwd - 1) * fwd;
-	//cout << "DEBUG Info : offset = " << offset << endl;
     }
     else {
         offset = in_size;
-	//cout << "DEBUG Info : offset = " << offset << endl;
     }
 
 #if (TYPEDEF == 0)
@@ -355,7 +323,6 @@ void system_t::dump_memory()
 				continue;
   			    }
 			    out[i * DMA_WORD_PER_BEAT + j] = out_temp;
-			    //cout << "DEBUG_INFO: dump out  = " << (float) out_fx << endl;
 			    }
 
 			    mem_dump_idx++;
@@ -364,11 +331,8 @@ void system_t::dump_memory()
 			    if ((i - cnt_dump * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_OUT_WORD / DMA_WORD_PER_BEAT) == 0) {
 				i = i - (PLM_OUT_WORD - fwd) / DMA_WORD_PER_BEAT;
 				cnt_dump++;
-				//cout << "DEBUG_INFO: dump again to i = " << (i + 1) * DMA_WORD_PER_BEAT << endl;
-				//cout << "DEBUG_INFO: dump again from addr  = " << offset + mem_dump_idx << endl;
 
 			    }
-			    //cout << "DEBUG_INFO: dump from addr  = " << offset + mem_dump_idx << endl;
 		        }
 
 
@@ -402,7 +366,6 @@ void system_t::dump_memory()
 				continue;
   			    }
 			    out[i * DMA_WORD_PER_BEAT + j] = (float) out_fx;
-			    //cout << "DEBUG_INFO: dump out  = " << (float) out_fx << endl;
 			    }
 
 			    mem_dump_idx++;
@@ -411,11 +374,7 @@ void system_t::dump_memory()
 			    if ((i - cnt_dump * fwd / DMA_WORD_PER_BEAT + 1) % (PLM_OUT_WORD / DMA_WORD_PER_BEAT) == 0) {
 				i = i - (PLM_OUT_WORD - fwd) / DMA_WORD_PER_BEAT;
 				cnt_dump++;
-				//cout << "DEBUG_INFO: dump again to i = " << (i + 1) * DMA_WORD_PER_BEAT << endl;
-				//cout << "DEBUG_INFO: dump again from addr  = " << offset + mem_dump_idx << endl;
-
 			    }
-			    //cout << "DEBUG_INFO: dump from addr  = " << offset + mem_dump_idx << endl;
 		        }
 	    }
 	    else	{
